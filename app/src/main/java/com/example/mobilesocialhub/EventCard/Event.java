@@ -10,10 +10,10 @@ public class Event {
     private String eventTime;
     private String address;
 
-    public Event(String usernamePublished, String datePublished, Drawable activity, String eventDate, String eventTime, String address) {
+    public Event(String usernamePublished, String datePublished,  String eventDate, String eventTime, String address) {
         this.usernamePublished = usernamePublished;
         this.datePublished = datePublished;
-        this.activity = activity;
+//        this.activity = activity;
         this.eventDate = eventDate;
         this.eventTime = eventTime;
         this.address = address;
@@ -39,9 +39,9 @@ public class Event {
         return activity;
     }
 
-    public void setActivity(Drawable activity) {
-        this.activity = activity;
-    }
+//    public void setActivity(Drawable activity) {
+//        this.activity = activity;
+//    }
 
     public String getEventDate() {
         return eventDate;

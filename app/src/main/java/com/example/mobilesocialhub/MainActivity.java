@@ -1,5 +1,6 @@
 package com.example.mobilesocialhub;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -22,26 +23,27 @@ public class MainActivity extends AppCompatActivity {
 
         database= FirebaseDatabase.getInstance();
         Log.d(TAG,"database");
-        myRef= database.getReference("mobile-social-hub/message");
-        myRef.setValue("Hello, Wor");
-        DatabaseReference myRef2=database.getReference("messag2");
-        myRef2.setValue("No mistake");
+        myRef= database.getReference("mobile-social-hub/message2");
+        myRef.setValue("Hello, Word");
+//        DatabaseReference myRef2=database.getReference("messag2");
+//        myRef2.setValue("No mistake!");
+//
+//        myRef2.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                // This method is called once with the initial value and again
+//                // whenever data at this location is updated.
+//                String value = dataSnapshot.getValue(String.class);
+//                Log.d(TAG, "key is: " + dataSnapshot.getKey());
+//                Log.d(TAG, "Value is: " + value);
+//            }
+//
+//            public void onCancelled(DatabaseError error) {
+//                // Failed to read value
+//                Log.w(TAG, "Failed to read value.", error.toException());
+//            }
+//        });
 
-        myRef2.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                Log.d(TAG, "key is: " + dataSnapshot.getKey());
-                Log.d(TAG, "Value is: " + value);
-            }
-
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
 
 
         myRef.addValueEventListener(new ValueEventListener() {

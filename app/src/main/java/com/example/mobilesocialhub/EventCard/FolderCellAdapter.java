@@ -46,7 +46,7 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
     public void onBindViewHolder(@NonNull FolderCellAdapter.FolderViewHolder holder, int position) {
         holder.binding.usernamePublished.setText(event.get(position).getUsernamePublished());
         holder.binding.datePublished.setText(event.get(position).getDatePublished());
-        holder.binding.activity.setImageDrawable(event.get(position).getActivity());
+//        holder.binding.activity.setImageDrawable(event.get(position).getActivity());
         holder.binding.eventDate.setText(event.get(position).getEventDate());
         holder.binding.eventTime.setText(event.get(position).getEventTime());
         holder.binding.address.setText(event.get(position).getAddress());

@@ -1,48 +1,82 @@
 package com.example.mobilesocialhub.EventCard;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
+
 import com.example.mobilesocialhub.R;
-import com.example.mobilesocialhub.databinding.ActivityFolderBinding;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FolderActivity extends AppCompatActivity {
 
-    private ActivityFolderBinding mBinding;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
+    final String TAG = "Database";
+
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_folder);
-        mBinding= DataBindingUtil.setContentView(this, R.layout.activity_folder);
+        //With out databinding
+        setContentView(R.layout.activity_folder);
 //        recyclerView = findViewById(R.id.event_recycler);
 
-        List<Event> eventsList = new ArrayList<>();
-        eventsList.add(new Event("旋转木马的悲伤1","2020-02-19",getDrawable(R.drawable.walking),"2020-02-20","18:00pm","University of Melbourne"));
-        eventsList.add(new Event("旋转木马的悲伤2","2020-03-19",getDrawable(R.drawable.walking),"2020-03-20","15:00pm","University of Monash"));
-        eventsList.add(new Event("旋转木马的悲伤3","2020-04-19",getDrawable(R.drawable.walking),"2020-04-20","13:00pm","University of Monash"));
 
-        FolderCellAdapter adapter = new FolderCellAdapter(eventsList);
+//        mBinding= DataBindingUtil.setContentView(this, R.layout.activity_folder);
+//        final List<Event> eventsList = new ArrayList<>();
+//        final FolderCellAdapter adapter = new FolderCellAdapter(eventsList);
+//        mBinding.eventRecycler.setLayoutManager(new GridLayoutManager(this,1));
+//        mBinding.eventRecycler.setAdapter(adapter);
 
-        mBinding.eventRecycler.setLayoutManager(new GridLayoutManager(this,1));
-        mBinding.eventRecycler.setAdapter(adapter);
+//        eventsList.add(new Event("旋转木马的悲伤1","2020-02-19","2020-02-20","18:00pm","University of Melbourne"));
 
+//        database= FirebaseDatabase.getInstance();
+//        final DatabaseReference eventRef = database.getReference().child("Event");
+//        Log.w(TAG,"Completed connection");
+//        eventRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+//                String usernamePublished = datasnapshot.child("usernamePublished").getValue().toString();
+//                String datePublished = datasnapshot.child("datePublished").getValue().toString();
+//                String eventDate =datasnapshot.child("eventDate").getValue().toString();
+//                String eventTime =datasnapshot.child("eventTime").getValue().toString();
+//                String address = datasnapshot.child("address").getValue().toString();
+//
+//                eventsList.add(new Event(usernamePublished,datePublished,eventDate,eventTime,address));
+////                mAdapter.notifyDataSetChanged();
+//                Log.w(TAG,"Completed saving data");
+//                Log.w(TAG,eventsList.get(0).getDatePublished());
+//
+//                Log.w(TAG,"!:"+datasnapshot.child("address").getValue());
+//                adapter.notifyDataSetChanged();
+////                for(DataSnapshot snapshot:datasnapshot.getChildren() ){
+////                    Log.w(TAG, "HI!");
+////                    Log.w(TAG,"!:"+snapshot.getValue().toString());
+////                }
+////                mAdapter.notifyDataSetChanged();
+//
+//
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
-
-
-
-
-//        ListView theListView = findViewById(R.id.mainListView);
-
-
+//       eventsList.add(new Event("旋转木马的悲伤1","2020-02-19","2020-02-20","18:00pm","University of Melbourne"));
+//        Log.w(TAG,"second"+eventsList.get(0).getDatePublished());
 
     }
 }
