@@ -22,10 +22,10 @@
             android:layout_marginRight="10dp"
             >
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/profile_mia" />
+                android:src="@drawable/profile_mia" />
 
             <TextView
                 android:id="@+id/left_msg"
@@ -55,11 +55,10 @@
             android:padding="20sp"
             android:background="@drawable/rectangle_right"/>
 
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="46dp"
-            android:layout_marginRight="0dp"
-            android:background="@drawable/profile_yangyang" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/profile_yangyang" />
         </LinearLayout>
 
     </LinearLayout>
