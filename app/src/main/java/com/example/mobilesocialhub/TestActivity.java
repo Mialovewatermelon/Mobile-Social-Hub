@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.mobilesocialhub.eventcard.CreateEventFragment;
 import com.example.mobilesocialhub.eventcard.EventFragment;
 import com.example.mobilesocialhub.chat.ChatFragment;
 import com.example.mobilesocialhub.databinding.ActivityTestBinding;
@@ -17,6 +18,7 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 public class TestActivity extends AppCompatActivity {
     EventFragment eventFragment;
     ChatFragment chatFragment;
+    CreateEventFragment createFragment;
     Fragment nowFragment;
 
     @Override
@@ -27,6 +29,7 @@ public class TestActivity extends AppCompatActivity {
         FragmentTransaction ft = fm.beginTransaction();
         eventFragment = new EventFragment();
         chatFragment = new ChatFragment();
+        createFragment = new CreateEventFragment();
         nowFragment = eventFragment;
         ChipNavigationBar bottomNavView = testBinding.chipNavigationBar;
 
@@ -42,7 +45,7 @@ public class TestActivity extends AppCompatActivity {
                         navContent(nowFragment, chatFragment);
                         break;
                     case R.id.activity_info:
-                        navContent(nowFragment, eventFragment);
+                        navContent(nowFragment, createFragment);
                         break;
                     default:
                         break;
@@ -51,7 +54,6 @@ public class TestActivity extends AppCompatActivity {
         };
         bottomNavView.setOnItemSelectedListener(itemListener);
         bottomNavView.setItemSelected(R.id.home_info, true);
-        Log.d("RUNRUNRUN", String.valueOf(bottomNavView.getSelectedItemId()));
     }
     private void navContent(Fragment from, Fragment to) {
         if(nowFragment != to) {

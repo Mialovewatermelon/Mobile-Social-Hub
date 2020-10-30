@@ -9,7 +9,6 @@
     <fragment
         android:id="@+id/fragment"
         android:name="com.example.mobilesocialhub.eventcard.EventFragment"
-        tools:layout="@layout/fragment_event"
         android:layout_width="match_parent"
         android:layout_height="678dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:layout="@layout/fragment_event" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,16 +1,22 @@
 package com.example.mobilesocialhub.eventcard;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.mobilesocialhub.MainActivity;
+import com.example.mobilesocialhub.R;
 import com.example.mobilesocialhub.databinding.FragmentEventBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +33,10 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class EventFragment extends Fragment {
+
+    //fragment manager
+    FragmentManager fm;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -50,6 +60,8 @@ public class EventFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // get the fragment manager
+        fm = getFragmentManager();
     }
 
     @Override
@@ -94,6 +106,14 @@ public class EventFragment extends Fragment {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        // add add event button
+        Button addEventBtn = mBinding.addEventBtn;
+        addEventBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
             }
         });
 
