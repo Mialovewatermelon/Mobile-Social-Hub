@@ -49,6 +49,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
     DatabaseReference eventRef;
     String datePublished;
     FragmentManager fm;
+    OnButtonClick onButtonClick;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -92,6 +93,9 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
                 Event newEvent = new Event(usernamePublished, datePublished, eventDate, eventTime, address, uuid);
                 eventRef.child(uuid).setValue(newEvent);
                 Toast.makeText(v.getContext(), "Event has been created", Toast.LENGTH_LONG).show();
+                if (this.onButtonClick != null) {
+                    this.onButtonClick.onclick(v);
+                }
                 break;
             case R.id.date_pick_btn:
                 Calendar now = Calendar.getInstance();
@@ -125,5 +129,17 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
     public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {
         String time = new String(hourOfDay+ ":" + minute);
         eventTimeText.setText(time);
+    }
+
+    public CreateEventFragment.OnButtonClick getOnButtonClick() {
+        return this.onButtonClick;
+    }
+
+    public void setOnButtonClick(CreateEventFragment.OnButtonClick onButtonClick) {
+        this.onButtonClick = onButtonClick;
+    }
+
+    public interface OnButtonClick{
+        void onclick(View view);
     }
 }

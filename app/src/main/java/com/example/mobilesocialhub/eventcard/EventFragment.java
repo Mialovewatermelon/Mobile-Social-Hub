@@ -37,6 +37,9 @@ public class EventFragment extends Fragment {
     //fragment manager
     FragmentManager fm;
 
+    // Button callback
+    OnButtonClick onButtonClick;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -114,6 +117,9 @@ public class EventFragment extends Fragment {
         addEventBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (onButtonClick != null) {
+                    onButtonClick.onclick(v);
+                }
             }
         });
 
@@ -124,6 +130,18 @@ public class EventFragment extends Fragment {
         eventsList=new ArrayList<>();
         eventsList.add(new Event("旋转木马的悲伤1","2020-02-19","2020-02-20","18:00pm","University of Melbourne","10086"));
 
+    }
+
+    public OnButtonClick getOnButtonClick() {
+        return this.onButtonClick;
+    }
+
+    public void setOnButtonClick(OnButtonClick onButtonClick) {
+        this.onButtonClick = onButtonClick;
+    }
+
+    public interface OnButtonClick{
+        public void onclick(View view);
     }
 
 }

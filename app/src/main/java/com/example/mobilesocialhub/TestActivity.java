@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.example.mobilesocialhub.eventcard.CreateEventFragment;
 import com.example.mobilesocialhub.eventcard.EventFragment;
@@ -28,8 +29,22 @@ public class TestActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         eventFragment = new EventFragment();
+
+        eventFragment.setOnButtonClick(new EventFragment.OnButtonClick() {
+            @Override
+            public void onclick(View view) {
+                navContent(nowFragment, createFragment);
+            }
+        });
         chatFragment = new ChatFragment();
         createFragment = new CreateEventFragment();
+        createFragment.setOnButtonClick(new CreateEventFragment.OnButtonClick() {
+            @Override
+            public void onclick(View view) {
+                navContent(nowFragment, eventFragment);
+            }
+        });
+
         nowFragment = eventFragment;
         ChipNavigationBar bottomNavView = testBinding.chipNavigationBar;
 
