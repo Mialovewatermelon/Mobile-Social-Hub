@@ -75,16 +75,8 @@ public class EventFragment extends Fragment {
         eventRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot datasnapshot) {
-//                String usernamePublished = datasnapshot.child("usernamePublished").getValue().toString();
-//                String datePublished = datasnapshot.child("datePublished").getValue().toString();
-//                String eventDate =datasnapshot.child("eventDate").getValue().toString();
-//                String eventTime =datasnapshot.child("eventTime").getValue().toString();
-//                String address = datasnapshot.child("address").getValue().toString();
-//                Log.w(TAG, eventsList.get(0).getDatePublished());
-//
-//                eventsList.add(new Event(usernamePublished,datePublished,eventDate,eventTime,address));
+
                 for(DataSnapshot snapshot:datasnapshot.getChildren()) {
-//
                     Log.w(TAG,"HI"+snapshot.getValue().toString());
                     String usernamePublished = snapshot.child("usernamePublished").getValue().toString();
                     String datePublished = snapshot.child("datePublished").getValue().toString();
