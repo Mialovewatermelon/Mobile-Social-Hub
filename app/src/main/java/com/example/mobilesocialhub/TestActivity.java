@@ -9,10 +9,9 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.mobilesocialhub.EventCard.EventFragment;
+import com.example.mobilesocialhub.eventcard.EventFragment;
 import com.example.mobilesocialhub.chat.ChatFragment;
 import com.example.mobilesocialhub.databinding.ActivityTestBinding;
-import com.google.android.gms.actions.ItemListIntents;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class TestActivity extends AppCompatActivity {

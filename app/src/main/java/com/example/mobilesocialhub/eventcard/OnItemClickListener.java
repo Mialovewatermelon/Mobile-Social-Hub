@@ -1,4 +1,4 @@
-package com.example.mobilesocialhub.EventCard;
+package com.example.mobilesocialhub.eventcard;
 
 
 import android.view.View;

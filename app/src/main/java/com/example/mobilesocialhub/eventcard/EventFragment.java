@@ -1,18 +1,16 @@
-package com.example.mobilesocialhub.EventCard;
+package com.example.mobilesocialhub.eventcard;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.mobilesocialhub.R;
 import com.example.mobilesocialhub.databinding.FragmentEventBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -77,14 +75,15 @@ public class EventFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot datasnapshot) {
 
                 for(DataSnapshot snapshot:datasnapshot.getChildren()) {
-                    Log.w(TAG,"HI"+snapshot.getValue().toString());
+                    Log.w(TAG,"HI"+snapshot.getKey());
                     String usernamePublished = snapshot.child("usernamePublished").getValue().toString();
                     String datePublished = snapshot.child("datePublished").getValue().toString();
                     String eventDate = snapshot.child("eventDate").getValue().toString();
                     String eventTime = snapshot.child("eventTime").getValue().toString();
                     String address = snapshot.child("address").getValue().toString();
+                    String id = snapshot.getKey();
 
-                    eventsList.add(new Event(usernamePublished, datePublished, eventDate, eventTime, address));
+                    eventsList.add(new Event(usernamePublished, datePublished, eventDate, eventTime, address,id));
                     Log.w(TAG, "Completed saving data");
                     Log.w(TAG, eventsList.get(0).getDatePublished());
                 }
@@ -103,7 +102,8 @@ public class EventFragment extends Fragment {
 
     private void initialData() {
         eventsList=new ArrayList<>();
-        eventsList.add(new Event("旋转木马的悲伤1","2020-02-19","2020-02-20","18:00pm","University of Melbourne"));
+        eventsList.add(new Event("旋转木马的悲伤1","2020-02-19","2020-02-20","18:00pm","University of Melbourne","10086"));
 
     }
+
 }

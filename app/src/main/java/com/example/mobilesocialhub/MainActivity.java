@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        checkIntent();
 
 
 //        database= FirebaseDatabase.getInstance();
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG,"intent is coming1");
         if(getIntent().hasExtra("address")){
             Log.d(TAG,"found");
+            Log.d(TAG,getIntent().getStringExtra("address"));
         }
     }
 }

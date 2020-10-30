@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/fragment"
-        android:name="com.example.mobilesocialhub.EventCard.EventFragment"
+        android:name="com.example.mobilesocialhub.eventcard.EventFragment"
         tools:layout="@layout/fragment_event"
         android:layout_width="match_parent"
         android:layout_height="678dp"

@@ -1,8 +1,9 @@
-package com.example.mobilesocialhub.EventCard;
+package com.example.mobilesocialhub.eventcard;
 
 import android.graphics.drawable.Drawable;
 
 public class Event {
+    private String id;
     private String usernamePublished;
     private String datePublished;
     private Drawable activity;
@@ -10,13 +11,14 @@ public class Event {
     private String eventTime;
     private String address;
 
-    public Event(String usernamePublished, String datePublished,  String eventDate, String eventTime, String address) {
+    public Event(String usernamePublished, String datePublished,  String eventDate, String eventTime, String address, String id) {
         this.usernamePublished = usernamePublished;
         this.datePublished = datePublished;
 //        this.activity = activity;
         this.eventDate = eventDate;
         this.eventTime = eventTime;
         this.address = address;
+        this.id = id;
     }
 
     public String getUsernamePublished() {
@@ -61,6 +63,14 @@ public class Event {
 
     public String getAddress() {
         return address;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void setAddress(String address) {

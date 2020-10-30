@@ -17,8 +17,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".EventCard.FolderActivity" />
+        <activity android:name=".eventcard.FolderActivity" >
+
+        </activity>
         <activity android:name=".MainActivity" />
     </application>
 
