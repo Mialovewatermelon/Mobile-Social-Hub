@@ -55,7 +55,7 @@ public class EventFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static EventFragment newInstance(String param1, String param2) {
+    public static EventFragment newInstance(String id) {
         EventFragment fragment = new EventFragment();
         return fragment;
     }

@@ -10,7 +10,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="297dp"
+        android:layout_height="260dp"
+        android:layout_marginBottom="8dp"
+
+        android:background="@drawable/border"
 
         android:scrollbars="none"
         >
@@ -61,7 +64,7 @@
 
         <ImageView
             android:id="@+id/elip"
-            android:layout_width="33dp"
+            android:layout_width="34dp"
             android:layout_height="34dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline16"
             app:layout_constraintEnd_toEndOf="parent"
@@ -108,7 +111,7 @@
             android:id="@+id/eventTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="15dp"
             android:text="@{event.eventTime}"
             android:textAlignment="center"
             android:textSize="20dp"
@@ -127,10 +130,94 @@
             android:text="@{event.address}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.127"
+            app:layout_constraintHorizontal_bias="0.133"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline16"
-            app:layout_constraintVertical_bias="0.683" />
+            app:layout_constraintVertical_bias="0.769" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="58dp"
+            android:layout_height="49dp"
+            android:src="@drawable/profile_yangyang"
+
+            app:layout_constraintBottom_toTopOf="@+id/guideline16"
+            app:layout_constraintEnd_toStartOf="@+id/guideline17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/clock"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/eventTime"
+            app:layout_constraintHorizontal_bias="0.314"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toBottomOf="@+id/eventDate"
+            app:layout_constraintVertical_bias="0.153"
+            app:srcCompat="@drawable/clock" />
+
+        <TextView
+            android:id="@+id/only"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Only "
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.269"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toBottomOf="@+id/eventTime"
+            app:layout_constraintVertical_bias="0.138" />
+
+        <TextView
+            android:id="@+id/timeleft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 hr "
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/only"
+            app:layout_constraintTop_toBottomOf="@+id/eventTime"
+            app:layout_constraintVertical_bias="0.138" />
+
+        <TextView
+            android:id="@+id/left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="left"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/timeleft"
+            app:layout_constraintTop_toBottomOf="@+id/eventTime"
+            app:layout_constraintVertical_bias="0.138" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline16"
+            app:layout_constraintEnd_toStartOf="@+id/elip"
+            app:layout_constraintHorizontal_bias="0.819"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.265"
+            app:srcCompat="@drawable/join" />
+
+        <ImageView
+            android:id="@+id/gps"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/address"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline16"
+            app:layout_constraintVertical_bias="0.78"
+            app:srcCompat="@drawable/map" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
