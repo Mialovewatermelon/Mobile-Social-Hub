@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -76,6 +77,7 @@ public class EventFragment extends Fragment {
         mBinding.eventRecycler.setLayoutManager(new GridLayoutManager(getContext(),1));
 
         //new the array and can set default value
+
         initialData();
 
         //set the adapter
@@ -89,16 +91,19 @@ public class EventFragment extends Fragment {
         eventRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+                eventsList.clear();
 
                 for(DataSnapshot snapshot:datasnapshot.getChildren()) {
                     Log.w(TAG,"HI"+snapshot.getKey());
+                    String id = snapshot.getKey();
                     String usernamePublished = snapshot.child("usernamePublished").getValue().toString();
                     String datePublished = snapshot.child("datePublished").getValue().toString();
                     String eventDate = snapshot.child("eventDate").getValue().toString();
                     String eventTime = snapshot.child("eventTime").getValue().toString();
                     String address = snapshot.child("address").getValue().toString();
                     String activityName = snapshot.child("activityName").getValue().toString();
-                    String id = snapshot.getKey();
+
+
 
                     eventsList.add(new Event(usernamePublished, datePublished, eventDate, eventTime, address,id,activityName));
                     Log.w(TAG, "Completed saving data");
