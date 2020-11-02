@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mobilesocialhub.databinding.ActivityFolderchildBinding;
 import com.example.mobilesocialhub.databinding.FragmentEventBinding;
 import com.example.mobilesocialhub.databinding.FragmentTestBinding;
 
@@ -26,6 +27,7 @@ public class TestFragment extends Fragment {
 
     // TODO: Rename and change types of parameters
     private String id;
+
     private FragmentTestBinding mBinding;
     private String TAG = "intent";
 
@@ -51,8 +53,6 @@ public class TestFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Override

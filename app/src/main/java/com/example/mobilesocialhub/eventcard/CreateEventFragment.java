@@ -35,6 +35,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class CreateEventFragment extends Fragment implements View.OnClickListener, DatePickerDialog.OnDateSetListener,
         com.wdullaer.materialdatetimepicker.time.TimePickerDialog.OnTimeSetListener {
     ActivityCreateEventBinding mBinding;
@@ -50,6 +52,14 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
     String datePublished;
     FragmentManager fm;
     OnButtonClick onButtonClick;
+    TextView activityChosen;
+    CircleImageView sport;
+    CircleImageView coffee;
+    CircleImageView dating;
+    CircleImageView dining;
+    CircleImageView shopping;
+    CircleImageView work;
+    String activityIcon;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,6 +80,14 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
         datePickBtn = mBinding.datePickBtn;
         timePickBtn = mBinding.timePickBtn;
         submitBtn = mBinding.createEventBtn;
+        coffee = mBinding.coffee;
+        sport = mBinding.sport;
+        dating = mBinding.dating;
+        dining = mBinding.dining;
+        shopping = mBinding.shopping;
+        activityChosen=mBinding.activityChosen;
+        work=mBinding.work;
+
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date(System.currentTimeMillis());
         datePublished = simpleDateFormat.format(date);
@@ -77,6 +95,57 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
         submitBtn.setOnClickListener(this);
         datePickBtn.setOnClickListener(this);
         timePickBtn.setOnClickListener(this);
+
+        coffee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+               activityChosen.setText("Let's go for a coffee!");
+               activityIcon = "coffee";
+               Log.w("create","I click");
+            }
+        });
+
+        shopping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityChosen.setText("Let's go shopping");
+                activityIcon = "shopping";
+            }
+        });
+
+        work.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityChosen.setText("Let's work together");
+                activityIcon = "work";
+            }
+        });
+
+        dining.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityChosen.setText("Let's dining out");
+                activityIcon = "dining";
+            }
+        });
+
+        dating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityChosen.setText("Let's go for a date");
+                activityIcon = "date";
+            }
+        });
+
+        sport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activityChosen.setText("Let's exercise together");
+                activityIcon = "sport";
+            }
+        });
+
         return mBinding.getRoot();
     }
 
@@ -90,7 +159,8 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
                 String eventDate = this.eventDateText.getText().toString();
                 String eventTime = this.eventTimeText.getText().toString();
                 String uuid = UUID.randomUUID().toString();
-                Event newEvent = new Event(usernamePublished, datePublished, eventDate, eventTime, address, uuid);
+                String activityName = this.activityIcon;
+                Event newEvent = new Event(usernamePublished, datePublished, eventDate, eventTime, address, uuid,activityName);
                 eventRef.child(uuid).setValue(newEvent);
                 Toast.makeText(v.getContext(), "Event has been created", Toast.LENGTH_LONG).show();
                 if (this.onButtonClick != null) {
@@ -107,6 +177,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
                 );
                 dpd.show(getFragmentManager(), "Datepickerdialog");
                 break;
+
             case R.id.time_pick_btn:
                 com.wdullaer.materialdatetimepicker.time.TimePickerDialog tpd = com.wdullaer.materialdatetimepicker.time.TimePickerDialog.newInstance(
                         this,
@@ -114,6 +185,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
                 );
                 tpd.show(getFragmentManager(), "Datepickerdialog");
                 break;
+
 
 
         }

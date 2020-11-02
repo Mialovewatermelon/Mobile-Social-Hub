@@ -29,7 +29,6 @@ public class TestActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         eventFragment = new EventFragment();
-
         eventFragment.setOnButtonClick(new EventFragment.OnButtonClick() {
             @Override
             public void onclick(View view) {

@@ -78,8 +78,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Activity Name"
-                    android:src="@drawable/picture"
-                    android:paddingStart="50dp"/>
+                    android:src="@drawable/activityicon"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="10dp"/>
                 <EditText
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
@@ -97,8 +98,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Activity Name"
-                    android:src="@drawable/picture"
-                    android:paddingStart="50dp"/>
+                    android:src="@drawable/dateicon"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="10dp"/>
 
                 <TextView
                     android:id="@+id/date_text"
@@ -122,8 +124,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Activity Name"
-                    android:src="@drawable/picture"
-                    android:paddingStart="50dp"/>
+                    android:src="@drawable/timeicon"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="10dp"/>
                 <TextView
                     android:id="@+id/time_text"
                     android:layout_width="250dp"
@@ -146,8 +149,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Activity Name"
-                    android:src="@drawable/picture"
-                    android:paddingStart="50dp"/>
+                    android:src="@drawable/locationicon"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="10dp"/>
                 <EditText
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
@@ -191,65 +195,88 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImageView3"
+                android:id="@+id/sport"
                 android:layout_width="76dp"
                 android:layout_height="74dp"
                 android:layout_marginStart="64dp"
                 android:layout_marginTop="40dp"
-                android:src="@drawable/picture"
+                android:src="@drawable/sport"
+                app:civ_border_color="@color/mdtp_transparent_black"
+                app:civ_border_width="1dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImageView5"
+                android:id="@+id/dining"
                 android:layout_width="76dp"
                 android:layout_height="74dp"
                 android:layout_marginStart="24dp"
-                android:src="@drawable/picture"
-                app:layout_constraintBottom_toBottomOf="@+id/circleImageView3"
-                app:layout_constraintStart_toEndOf="@+id/circleImageView3"
-                app:layout_constraintTop_toTopOf="@+id/circleImageView3"
+                android:src="@drawable/restaurant"
+                app:civ_border_color="@color/mdtp_transparent_black"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sport"
+                app:layout_constraintStart_toEndOf="@+id/sport"
+                app:layout_constraintTop_toTopOf="@+id/sport"
                 app:layout_constraintVertical_bias="0.0" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImageView4"
+                android:id="@+id/shopping"
                 android:layout_width="76dp"
                 android:layout_height="74dp"
-                android:src="@drawable/picture"
-                app:layout_constraintBottom_toBottomOf="@+id/circleImageView5"
+                android:src="@drawable/shopping"
+                app:civ_border_color="@color/mdtp_transparent_black"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/dining"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.336"
-                app:layout_constraintStart_toEndOf="@+id/circleImageView5"
-                app:layout_constraintTop_toTopOf="@+id/circleImageView5"
+                app:layout_constraintStart_toEndOf="@+id/dining"
+                app:layout_constraintTop_toTopOf="@+id/dining"
                 app:layout_constraintVertical_bias="0.0" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImageView6"
+                android:id="@+id/work"
                 android:layout_width="76dp"
                 android:layout_height="74dp"
-                android:src="@drawable/picture"
+                android:src="@drawable/work"
+                app:civ_border_color="@color/mdtp_transparent_black"
+                app:civ_border_width="1dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/circleImageView3"
-                app:layout_constraintTop_toBottomOf="@+id/circleImageView3" />
+                app:layout_constraintStart_toStartOf="@+id/dining"
+                app:layout_constraintTop_toBottomOf="@+id/dining" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImageView7"
+                android:id="@+id/dating"
                 android:layout_width="76dp"
                 android:layout_height="74dp"
-                android:src="@drawable/picture"
-                app:layout_constraintBottom_toBottomOf="@+id/circleImageView6"
-                app:layout_constraintStart_toStartOf="@+id/circleImageView5"
-                app:layout_constraintTop_toTopOf="@+id/circleImageView6" />
+                android:src="@drawable/dating"
+                app:civ_border_color="@color/mdtp_transparent_black"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/work"
+                app:layout_constraintStart_toStartOf="@+id/sport"
+                app:layout_constraintTop_toTopOf="@+id/work" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImageView8"
+                android:id="@+id/coffee"
                 android:layout_width="76dp"
                 android:layout_height="74dp"
-                android:src="@drawable/picture"
-                app:layout_constraintBottom_toBottomOf="@+id/circleImageView7"
-                app:layout_constraintEnd_toEndOf="@+id/circleImageView4"
-                app:layout_constraintStart_toStartOf="@+id/circleImageView4"
-                app:layout_constraintTop_toTopOf="@+id/circleImageView7" />
+                android:src="@drawable/coffee"
+                app:civ_border_color="@color/mdtp_transparent_black"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/dating"
+                app:layout_constraintEnd_toEndOf="@+id/shopping"
+                app:layout_constraintStart_toStartOf="@+id/shopping"
+                app:layout_constraintTop_toTopOf="@+id/dating" />
+
+            <TextView
+                android:id="@+id/activityChosen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose your Activity"
+
+                app:layout_constraintBottom_toTopOf="@+id/dining"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -258,6 +285,8 @@
             android:layout_width="60dp"
             android:layout_height="31dp"
             android:text="Button"
+            app:civ_border_color="@color/mdtp_transparent_black"
+            app:civ_border_width="1dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView"

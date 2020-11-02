@@ -47,6 +47,7 @@ public class EventFragment extends Fragment {
     private FragmentEventBinding mBinding;
     FirebaseDatabase database;
     final String TAG = "Database";
+
     private List<Event> eventsList;
 
     // TODO: Rename and change types of parameters
@@ -96,9 +97,10 @@ public class EventFragment extends Fragment {
                     String eventDate = snapshot.child("eventDate").getValue().toString();
                     String eventTime = snapshot.child("eventTime").getValue().toString();
                     String address = snapshot.child("address").getValue().toString();
+                    String activityName = snapshot.child("activityName").getValue().toString();
                     String id = snapshot.getKey();
 
-                    eventsList.add(new Event(usernamePublished, datePublished, eventDate, eventTime, address,id));
+                    eventsList.add(new Event(usernamePublished, datePublished, eventDate, eventTime, address,id,activityName));
                     Log.w(TAG, "Completed saving data");
                     Log.w(TAG, eventsList.get(0).getDatePublished());
                 }
@@ -118,6 +120,7 @@ public class EventFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (onButtonClick != null) {
+                    // set commentfragment string id's value
                     onButtonClick.onclick(v);
                 }
             }
@@ -128,7 +131,7 @@ public class EventFragment extends Fragment {
 
     private void initialData() {
         eventsList=new ArrayList<>();
-        eventsList.add(new Event("旋转木马的悲伤1","2020-02-19","2020-02-20","18:00pm","University of Melbourne","10086"));
+        eventsList.add(new Event("旋转木马的悲伤1","2020-02-19","2020-02-20","18:00pm","University of Melbourne","10086","coffee"));
 
     }
 
@@ -143,5 +146,7 @@ public class EventFragment extends Fragment {
     public interface OnButtonClick{
         public void onclick(View view);
     }
+
+
 
 }

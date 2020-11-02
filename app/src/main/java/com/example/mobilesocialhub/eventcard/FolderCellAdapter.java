@@ -22,6 +22,7 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
     private List<Event> event;
     final String TAG="Click";
 
+
     public FolderCellAdapter(List<Event> event) {
         this.event = event;
     }
@@ -51,6 +52,9 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
     public void onBindViewHolder(@NonNull final FolderCellAdapter.FolderViewHolder holder, int position) {
         holder.binding.usernamePublished.setText(event.get(position).getUsernamePublished());
         holder.binding.setEvent(event.get(position));
+        //here change to the activity name
+        setPicture(event.get(position).getActivityName(), holder);
+
         holder.binding.datePublished.setText(event.get(position).getDatePublished());
 //        holder.binding.activity.setImageDrawable(event.get(position).getActivity());
         holder.binding.eventDate.setText(event.get(position).getEventDate());
@@ -73,6 +77,37 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
     @Override
     public int getItemCount() {
         return event.size();
+    }
+
+
+
+    public interface OnElipsClick{
+        public void onelipsclick(View view);
+    }
+
+    public void setPicture(String activityName, FolderCellAdapter.FolderViewHolder holder){
+        switch (activityName){
+            case "sport":
+                holder.binding.activity.setImageResource(R.drawable.sport);
+                break;
+
+            case "date":
+                holder.binding.activity.setImageResource(R.drawable.dating);
+                break;
+
+            case "dining":
+                holder.binding.activity.setImageResource(R.drawable.restaurant);
+                break;
+            case "work":
+                holder.binding.activity.setImageResource(R.drawable.work);
+                break;
+            case "coffee":
+                holder.binding.activity.setImageResource(R.drawable.coffee);
+                break;
+            case "shopping":
+                holder.binding.activity.setImageResource(R.drawable.shopping);
+                break;
+        }
     }
 }
 

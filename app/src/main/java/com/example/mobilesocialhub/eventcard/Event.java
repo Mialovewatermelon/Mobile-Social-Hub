@@ -10,14 +10,24 @@ public class Event {
     private String eventDate;
     private String eventTime;
     private String address;
+    private String activityName;
 
-    public Event(String usernamePublished, String datePublished,  String eventDate, String eventTime, String address, String id) {
+    public String getActivityName() {
+        return activityName;
+    }
+
+    public void setActivityName(String activityName) {
+        this.activityName = activityName;
+    }
+
+    public Event(String usernamePublished, String datePublished, String eventDate, String eventTime, String address, String id,String activityName) {
         this.usernamePublished = usernamePublished;
         this.datePublished = datePublished;
 //        this.activity = activity;
         this.eventDate = eventDate;
         this.eventTime = eventTime;
         this.address = address;
+        this.activityName=activityName;
         this.id = id;
     }
 
