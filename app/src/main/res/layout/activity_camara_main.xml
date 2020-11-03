@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contacts"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/take_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拍照"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/choose_from_album"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="相册"
+        android:layout_below="@+id/take_photo"
+        android:textSize="20dp"
+        />
+
+    <Button
+        android:id="@+id/upload_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="上传"
+        android:layout_below="@+id/take_photo"
+        android:textSize="20dp"
+        />
+
+    <Button
+        android:id="@+id/download_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="下载"
+        android:layout_below="@+id/take_photo"
+        android:textSize="20dp"
+        />
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/choose_from_album"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>
