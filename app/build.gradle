@@ -51,6 +51,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.jakewharton:butterknife:10.2.1'
 
 }
 repositories {

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#A9B6AA"
+        android:layout_height="38dp">
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/back_iv"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@mipmap/back"
+            android:padding="1dp"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/background_iv"
+            android:layout_width="match_parent"
+            android:layout_height="241dp"
+            android:src="@mipmap/ic_launcher"/>
+        <ImageView
+            android:id="@+id/cover_im"
+            android:background="@drawable/bg_cover"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="200dp"
+            android:layout_width="72dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_height="72dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/qianming_tv"
+            android:layout_width="160dp"
+            android:layout_height="27dp"
+            android:padding="2dp"
+            android:text="但行好事莫问前程"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+        <Button
+            android:id="@+id/chat_bt"
+            android:layout_marginLeft="30dp"
+            android:layout_width="85dp"
+            android:background="@drawable/bg_button"
+            android:text="Chat"
+            android:layout_height="36dp"/>
+        <Button
+            android:id="@+id/follow_bt"
+            android:layout_marginLeft="13dp"
+            android:layout_width="86dp"
+            android:background="@drawable/bg_button"
+            android:text="Follow"
+            android:layout_height="36dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:background="@drawable/bg_border_stroke"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:layout_height="127dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:hint="233"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:hint="fellower"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:hint="66"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:hint="fellowing"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:hint="15"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:hint="Activity"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="36dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_border_stroke"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activities"
+            android:textSize="20sp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:id="@+id/home_pager_content_list"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never" />
+
+    </LinearLayout>
+</LinearLayout>
