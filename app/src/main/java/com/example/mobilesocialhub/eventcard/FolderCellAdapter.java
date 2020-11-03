@@ -4,11 +4,9 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
-import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +18,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobilesocialhub.MainActivity;
 import com.example.mobilesocialhub.R;
 import com.example.mobilesocialhub.databinding.ActivityFolderchildBinding;
 
@@ -97,7 +94,6 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
         holder.binding.gps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
                 if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                         && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -108,7 +104,7 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
                     //                                          int[] grantResults)
                     // to handle the case where the user grants the permission. See the documentation
                     // for ActivityCompat#requestPermissions for more details.
-                    Toast.makeText(context, "Please check the GPS is opened", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "Please check the GPS permission is opened", Toast.LENGTH_LONG).show();
                     return;
                 }
                 Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);

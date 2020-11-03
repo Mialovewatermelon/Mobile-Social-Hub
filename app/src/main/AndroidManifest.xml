@@ -22,7 +22,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".eventcard.FolderActivity"></activity>
-        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
