@@ -18,10 +18,20 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PictureActivity">
 
+        <activity
+            android:name=".SignupActivity"
+            android:label="@string/title_activity_signup">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".TestActivity"/>
-        <activity android:name=".eventcard.FolderActivity"></activity>
-        <activity android:name=".album.Camera">
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
         </activity>
         <activity android:name=".album.Albums"></activity>
