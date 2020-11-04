@@ -80,9 +80,9 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
             @Override
             public void onClick(View view) {
                 Log.w(TAG,"Test Click"+String.valueOf(holder.getAdapterPosition()));
-                Intent intent = new Intent(view.getContext(), MainActivity.class);
-                intent.putExtra("address",holder.binding.getEvent().getId());
-                view.getContext().startActivity(intent);
+//                Intent intent = new Intent(view.getContext(), MainActivity.class);
+//                intent.putExtra("address",holder.binding.getEvent().getId());
+//                view.getContext().startActivity(intent);
             }
         });
         holder.binding.gps.setOnClickListener(new View.OnClickListener() {
