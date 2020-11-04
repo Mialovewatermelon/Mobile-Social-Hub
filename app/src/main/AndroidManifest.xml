@@ -16,21 +16,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestActivity">
+        <activity android:name=".PictureActivity">
+
+        </activity>
+        <activity android:name=".eventcard.FolderActivity"></activity>
+        <activity android:name=".album.Camera">
+
+        </activity>
+        <activity android:name=".album.Albums"></activity>
+        <activity android:name=".album.MainActivity" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".eventcard.FolderActivity"></activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".album.Camera">
-
-        </activity>
-        <activity android:name=".album.Albums"></activity>
-        <activity android:name=".album.MainActivity">
-
         </activity>
         <provider
             android:name="androidx.core.content.FileProvider"

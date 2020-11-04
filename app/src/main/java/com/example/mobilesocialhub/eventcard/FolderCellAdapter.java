@@ -4,11 +4,9 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
-import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +18,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobilesocialhub.MainActivity;
 import com.example.mobilesocialhub.R;
 import com.example.mobilesocialhub.databinding.ActivityFolderchildBinding;
 
@@ -80,9 +77,9 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
             @Override
             public void onClick(View view) {
                 Log.w(TAG,"Test Click"+String.valueOf(holder.getAdapterPosition()));
-                Intent intent = new Intent(view.getContext(), MainActivity.class);
-                intent.putExtra("address",holder.binding.getEvent().getId());
-                view.getContext().startActivity(intent);
+//                Intent intent = new Intent(view.getContext(), MainActivity.class);
+//                intent.putExtra("address",holder.binding.getEvent().getId());
+//                view.getContext().startActivity(intent);
             }
         });
         holder.binding.gps.setOnClickListener(new View.OnClickListener() {
