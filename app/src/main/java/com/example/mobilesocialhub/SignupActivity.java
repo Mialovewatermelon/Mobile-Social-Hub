@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobilesocialhub.databinding.ActivitySignupBinding;
+import com.example.mobilesocialhub.profile.People;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -70,8 +71,8 @@ public class SignupActivity extends AppCompatActivity {
                                Toast.makeText(view.getContext(),"Username already existed", Toast.LENGTH_LONG).show();
                            }else{
                                // put username and password in the database
-                               userSignupRef.child(typeUsername).setValue(typePassword);
-
+//                               userSignupRef.child(typeUsername).setValue(typePassword);
+                               userSignupRef.child(typeUsername).setValue(new People(typeUsername, typePassword));
                                //jump to the main page and pass the username
                                Intent intent = new Intent(view.getContext(), TestActivity.class);
                                intent.putExtra("username",typeUsername);

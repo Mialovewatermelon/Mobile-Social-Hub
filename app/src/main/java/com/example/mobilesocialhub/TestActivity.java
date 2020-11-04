@@ -91,7 +91,8 @@ public class TestActivity extends AppCompatActivity {
                 navContent(nowFragment, eventFragment);
             }
         });
-        profileFragment = new ProfileFragment();
+        profileFragment = new ProfileFragment(this.username);
+
         //set the createactivity Fragment
         createFragment.setUsername(username);
 

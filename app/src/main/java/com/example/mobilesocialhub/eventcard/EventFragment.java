@@ -98,9 +98,6 @@ public class EventFragment extends Fragment {
                     String eventTime = snapshot.child("eventTime").getValue().toString();
                     String address = snapshot.child("address").getValue().toString();
                     String activityName = snapshot.child("activityName").getValue().toString();
-
-
-
                     eventsList.add(new Event(usernamePublished, datePublished, eventDate, eventTime, address,id,activityName));
                     Log.w(TAG, "Completed saving data");
                     Log.w(TAG, eventsList.get(0).getDatePublished());

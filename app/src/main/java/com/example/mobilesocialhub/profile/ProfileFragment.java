@@ -32,11 +32,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mobilesocialhub.R;
 import com.example.mobilesocialhub.eventcard.Event;
 import com.example.mobilesocialhub.profile.ProfileAdapter;
+import com.google.android.gms.auth.api.signin.internal.Storage;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.zxy.tiny.Tiny;
 import com.zxy.tiny.callback.FileWithBitmapCallback;
 
@@ -46,7 +52,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ProfileFragment extends Fragment implements View.OnClickListener{
+public class ProfileFragment extends Fragment implements View.OnClickListener {
     private boolean isBackground = false;
     //调取系统摄像头的请求码
     private static final int MY_ADD_CASE_CALL_PHONE = 6;
@@ -80,6 +86,19 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
     private List<Event> activityList;
 
+    private String username;
+
+    private FirebaseDatabase database;
+
+    private Storage storage;
+
+    private String headPath;
+    private String backgroundPath;
+
+    public ProfileFragment(String username) {
+        this.username = username;
+    }
+
 
     @Nullable
     @Override
@@ -111,17 +130,17 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
             public void onClick(View v) {
             }
         });
-        background.setOnClickListener(new View.OnClickListener(){
+        background.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 isBackground = true;
-                Log.d(TAG,"isBackground ----> "+isBackground);
+                Log.d(TAG, "isBackground ----> " + isBackground);
                 openMenu();
             }
         });
 
-        cover.setOnClickListener(new View.OnClickListener(){
+        cover.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -139,23 +158,22 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         follow = view.findViewById(R.id.follow_bt);
         activities = view.findViewById(R.id.home_pager_content_list);
         activities.setLayoutManager(new LinearLayoutManager(getContext()));
-        activityList=new ArrayList<>();
+        activityList = new ArrayList<>();
         final ProfileAdapter adapter = new ProfileAdapter(activityList);
         activities.setAdapter(adapter);
 
 
-
         //Get Data from firebase
-        FirebaseDatabase database= FirebaseDatabase.getInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference eventRef = database.getReference().child("Events");
-        Log.w(TAG,"Completed connection！");
+        Log.w(TAG, "Completed connection！");
         eventRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot datasnapshot) {
                 activityList.clear();
 
-                for(DataSnapshot snapshot:datasnapshot.getChildren()) {
-                    Log.w(TAG,"HI"+snapshot.getKey());
+                for (DataSnapshot snapshot : datasnapshot.getChildren()) {
+                    Log.w(TAG, "HI" + snapshot.getKey());
                     String id = snapshot.getKey();
                     String usernamePublished = snapshot.child("usernamePublished").getValue().toString();
                     String datePublished = snapshot.child("datePublished").getValue().toString();
@@ -163,9 +181,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                     String eventTime = snapshot.child("eventTime").getValue().toString();
                     String address = snapshot.child("address").getValue().toString();
                     String activityName = snapshot.child("activityName").getValue().toString();
-                    activityList.add(new Event(usernamePublished, datePublished, eventDate, eventTime, address,id,activityName));
-                    Log.w(TAG, "Completed saving data");
-                    Log.w(TAG, activityList.get(0).getDatePublished());
+                    if (usernamePublished.equals(username)) {
+                        activityList.add(new Event(usernamePublished, datePublished, eventDate, eventTime, address, id, activityName));
+                    }
                 }
 
                 adapter.notifyDataSetChanged();
@@ -176,8 +194,51 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
             }
         });
-
-
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+        storageRef.child("images/"+ username + "-head.jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            // Got the download URL for 'users/me/profile.png'
+                            try {
+                                Tiny.FileCompressOptions options = new Tiny.FileCompressOptions();
+                                Tiny.getInstance().source(uri).asFile().withOptions(options).compress(new FileWithBitmapCallback() {
+                                    @Override
+                                    public void callback(boolean isSuccess, Bitmap bitmap, String outfile, Throwable t) {
+                                        cover.setImageBitmap(bitmap);
+                                    }
+                                });
+                            } catch (Exception e) {
+                                //"上传失败");
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle any errors
+                        }
+                    });
+        storageRef.child("images/"+ username + "-background.jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                // Got the download URL for 'users/me/profile.png'
+                try {
+                    Tiny.FileCompressOptions options = new Tiny.FileCompressOptions();
+                    Tiny.getInstance().source(uri).asFile().withOptions(options).compress(new FileWithBitmapCallback() {
+                        @Override
+                        public void callback(boolean isSuccess, Bitmap bitmap, String outfile, Throwable t) {
+                            background.setImageBitmap(bitmap);
+                        }
+                    });
+                } catch (Exception e) {
+                    //"上传失败");
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
+        });
     }
 
     /*
@@ -203,6 +264,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
     /**
      * 修改头像执行方法
+     *
      * @param view
      */
     public void UpdatePhoto(View view) {
@@ -223,7 +285,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
              * 7.0 调用系统相机拍照不再允许使用Uri方式，应该替换为FileProvider
              * 并且这样可以解决MIUI系统上拍照返回size为0的情况
              */
-            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
             uri = FileProvider.getUriForFile(getContext(), "com.example.mobilesocialhub.fileprovider", file);
         }
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
@@ -272,7 +334,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                     e.printStackTrace();
                 }
             } else {
-                Toast.makeText(getContext(),"拒绝了你的请求",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "拒绝了你的请求", Toast.LENGTH_SHORT).show();
                 //"权限拒绝");
                 // TODO: 2018/12/4 这里可以给用户一个提示,请求权限被拒绝了
             }
@@ -292,11 +354,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
     /**
      * startActivityForResult执行后的回调方法，接收返回的图片
+     *
      * @param requestCode
      * @param resultCode
      * @param data
      */
-    public  void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode != Activity.RESULT_CANCELED) {
             String state = Environment.getExternalStorageState();
@@ -306,7 +369,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
             Tiny.getInstance().source(readpic()).asFile().withOptions(options).compress(new FileWithBitmapCallback() {
                 @Override
                 public void callback(boolean isSuccess, Bitmap bitmap, String outfile, Throwable t) {
+                    uploadImageToServer(bitmap, outfile);
                     saveImageToServer(bitmap, outfile);//显示图片到imgView上
+
+
                 }
             });
         } else if (requestCode == 2 && resultCode == Activity.RESULT_OK
@@ -317,7 +383,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                 Tiny.getInstance().source(selectedImage).asFile().withOptions(options).compress(new FileWithBitmapCallback() {
                     @Override
                     public void callback(boolean isSuccess, Bitmap bitmap, String outfile, Throwable t) {
+                        uploadImageToServer(bitmap, outfile);
                         saveImageToServer(bitmap, outfile);
+
+                        Log.i("picplace", outfile);
                     }
                 });
             } catch (Exception e) {
@@ -334,22 +403,34 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         return filePath;
     }
 
+    public void uploadImageToServer(final Bitmap bitmap, String outfile) {
+        if (isBackground) {
+            File file = new File(outfile);
+            Uri uri = Uri.fromFile(file);
+            StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+            storageRef.child("images/" + username + "-background.jpg").putFile(uri);
+        } else {
+            File file = new File(outfile);
+            Uri uri = Uri.fromFile(file);
+            StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+            storageRef.child("images/" + username + "-head.jpg").putFile(uri);
+        }
+    }
+
     private void saveImageToServer(final Bitmap bitmap, String outfile) {
-        File file = new File(outfile);
         // TODO: 2018/12/4  这里就可以将图片文件 file 上传到服务器,上传成功后可以将bitmap设置给你对应的图片展示
         if (isBackground) {
             background.setImageBitmap(bitmap);
             isBackground = false;
-        }else {
+        } else {
             cover.setImageBitmap(bitmap);
         }
-
     }
 
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.take_photo_tv:
                 //"点击了照相";
                 //  6.0之后动态申请权限 摄像头调取权限,SD卡写入权限
@@ -388,7 +469,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
             case R.id.cancel:
                 dialog.dismiss();//关闭对话框
                 break;
-            default:break;
+            default:
+                break;
         }
     }
+
 }

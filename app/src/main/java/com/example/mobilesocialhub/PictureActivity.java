@@ -35,9 +35,8 @@ public class PictureActivity extends AppCompatActivity {
 
             setContentView(R.layout.activity_picture);
         mStorageRef = FirebaseStorage.getInstance().getReference();
-        Uri file = Uri.fromFile(new File("/sdcard/DCIM/Camera/IMG_20201104_122125.jpg"));
-        StorageReference riversRef = mStorageRef.child("images/rivers.jpg");
-
+        Uri file = Uri.fromFile(new File("/sdcard/DCIM/Camera/IMG_20201105_002330.jpg"));
+        StorageReference riversRef = mStorageRef.child("images/rivers2.jpg");
         riversRef.putFile(file);
 
 

@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         // check username exists in the database
                         if(snapshot.child(usernameText).exists()){
-                            if(passwordText.equals(snapshot.child(usernameText).getValue())){
+                            if(passwordText.equals(snapshot.child(usernameText).child("password").getValue())){
                                 Intent intent = new Intent(view.getContext(), TestActivity.class);
                                 intent.putExtra("username",usernameText);
                                 view.getContext().startActivity(intent);

@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
@@ -23,6 +24,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mobilesocialhub.R;
 import com.example.mobilesocialhub.databinding.ActivityFolderchildBinding;
 import com.example.mobilesocialhub.eventcard.Event;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.zxy.tiny.Tiny;
+import com.zxy.tiny.callback.FileWithBitmapCallback;
 
 import java.util.List;
 import java.util.Locale;
@@ -119,6 +126,32 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileV
                 }
             }
         });
+
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+        String username = holder.binding.usernamePublished.getText().toString();
+        storageRef.child("images/"+ username + "-head.jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                // Got the download URL for 'users/me/profile.png'
+                try {
+                    Tiny.FileCompressOptions options = new Tiny.FileCompressOptions();
+                    Tiny.getInstance().source(uri).asFile().withOptions(options).compress(new FileWithBitmapCallback() {
+                        @Override
+                        public void callback(boolean isSuccess, Bitmap bitmap, String outfile, Throwable t) {
+                            holder.binding.profileImage.setImageBitmap(bitmap);
+                        }
+                    });
+                } catch (Exception e) {
+                    //"上传失败");
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
+        });
+
 
 
     }

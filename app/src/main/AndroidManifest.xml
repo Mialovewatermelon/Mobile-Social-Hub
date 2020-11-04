@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PictureActivity"/>
+        <activity android:name=".PictureActivity"></activity>
         <activity android:name=".album.Albums"></activity>
         <activity android:name=".TestActivity"/>
         <activity android:name=".album.MainActivity" />
@@ -24,7 +24,6 @@
         <activity android:name=".LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
