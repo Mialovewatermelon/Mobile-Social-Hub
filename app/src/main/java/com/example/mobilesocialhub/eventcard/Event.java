@@ -33,7 +33,9 @@ public class Event {
         this.activityName=activityName;
         this.id = id;
         this.attendent = new HashMap<>();
-        attendent.put(usernamePublished, "1");
+        if (attendent == null) {
+            attendent.put(usernamePublished, "1");
+        }
     }
 
     public String getUsernamePublished() {
@@ -86,6 +88,14 @@ public class Event {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public void setAttendent(Map<String, String> attendent) {
+        this.attendent = attendent;
+    }
+
+    public Map<String, String> getAttendent() {
+        return attendent;
     }
 
 

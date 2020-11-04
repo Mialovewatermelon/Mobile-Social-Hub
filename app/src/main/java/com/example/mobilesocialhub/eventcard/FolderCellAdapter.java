@@ -24,6 +24,7 @@ import com.example.mobilesocialhub.R;
 import com.example.mobilesocialhub.databinding.ActivityFolderchildBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageException;
@@ -33,6 +34,7 @@ import com.zxy.tiny.callback.FileWithBitmapCallback;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 
 public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.FolderViewHolder> {
@@ -41,10 +43,12 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
     final String TAG = "Click";
     private boolean flag;
     private Context context;
+    String username;
 
 
-    public FolderCellAdapter(List<Event> event) {
+    public FolderCellAdapter(List<Event> event, String username) {
         this.event = event;
+        this.username = username;
     }
 
     public class FolderViewHolder extends RecyclerView.ViewHolder {
@@ -73,11 +77,28 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
     public void onBindViewHolder(@NonNull final FolderCellAdapter.FolderViewHolder holder, int position) {
         holder.binding.usernamePublished.setText(event.get(position).getUsernamePublished());
         holder.binding.setEvent(event.get(position));
+        Map<String, String> attendent = event.get(position).getAttendent();
         //here change to the activity name
         setPicture(event.get(position).getActivityName(), holder);
 
+        //join event
+        holder.binding.joinImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id = event.get(position).getId();
+                DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("Events/" + id);
+                if (attendent.containsKey(username)) {
+                    Toast.makeText(context, "You are already in this event", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    attendent.put(username, "1");
+                    databaseRef.child("attendent").setValue(attendent);
+                    Toast.makeText(context, "Congraduation! You are successfully joined", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         holder.binding.datePublished.setText(event.get(position).getDatePublished());
-//        holder.binding.activity.setImageDrawable(event.get(position).getActivity());
         holder.binding.eventDate.setText(event.get(position).getEventDate());
         holder.binding.eventTime.setText(event.get(position).getEventTime());
         holder.binding.address.setText(event.get(position).getAddress());

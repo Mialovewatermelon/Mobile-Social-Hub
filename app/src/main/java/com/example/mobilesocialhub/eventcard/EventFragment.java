@@ -22,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -77,7 +78,7 @@ public class EventFragment extends Fragment {
         initialData();
 
         //set the adapter
-        final FolderCellAdapter adapter = new FolderCellAdapter(eventsList);
+        final FolderCellAdapter adapter = new FolderCellAdapter(eventsList, username);
         mBinding.eventRecycler.setAdapter(adapter);
 
         //Get Data from firebase
@@ -98,7 +99,10 @@ public class EventFragment extends Fragment {
                     String eventTime = snapshot.child("eventTime").getValue().toString();
                     String address = snapshot.child("address").getValue().toString();
                     String activityName = snapshot.child("activityName").getValue().toString();
-                    eventsList.add(new Event(usernamePublished, datePublished, eventDate, eventTime, address,id,activityName));
+                    Event event  = new Event(usernamePublished, datePublished, eventDate, eventTime, address,id,activityName);
+                    Map<String, String> attendent = (Map<String, String>) snapshot.child("attendent").getValue();
+                    event.setAttendent(attendent);
+                    eventsList.add(event);
                     Log.w(TAG, "Completed saving data");
                     Log.w(TAG, eventsList.get(0).getDatePublished());
                 }
