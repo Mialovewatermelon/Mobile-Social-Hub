@@ -19,6 +19,7 @@
         <activity android:name=".PictureActivity">
 
         </activity>
+        <activity android:name=".TestActivity"/>
         <activity android:name=".eventcard.FolderActivity"></activity>
         <activity android:name=".album.Camera">
 

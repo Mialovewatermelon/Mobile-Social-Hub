@@ -20,7 +20,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobilesocialhub.MainActivity;
 import com.example.mobilesocialhub.R;
 import com.example.mobilesocialhub.databinding.ActivityFolderchildBinding;
 import com.example.mobilesocialhub.eventcard.Event;

@@ -224,7 +224,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
              * 并且这样可以解决MIUI系统上拍照返回size为0的情况
              */
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-            uri = FileProvider.getUriForFile(getContext(), "com.example.bobo.getphotodemo.fileprovider", file);
+            uri = FileProvider.getUriForFile(getContext(), "com.example.mobilesocialhub.fileprovider", file);
         }
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
         intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);
@@ -233,7 +233,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
     // 在sd卡中创建一保存图片（原图和缩略图共用的）文件夹
     private File createFileIfNeed(String fileName) throws IOException {
-        String fileA = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath() + "/nbinpic";
+        String fileA = getContext().getExternalFilesDir(Environment.DIRECTORY_DCIM).getAbsolutePath() + "/nbinpic";
         File fileJA = new File(fileA);
         if (!fileJA.exists()) {
             fileJA.mkdirs();
@@ -330,7 +330,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
      * 从保存原图的地址读取图片
      */
     private String readpic() {
-        String filePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath() + "/nbinpic/" + "UserIcon.png";
+        String filePath = getContext().getExternalFilesDir(Environment.DIRECTORY_DCIM).getAbsolutePath() + "/nbinpic/" + "UserIcon.png";
         return filePath;
     }
 

@@ -23,7 +23,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
-import com.example.mobilesocialhub.MainActivity;
 import com.example.mobilesocialhub.R;
 import com.example.mobilesocialhub.TestActivity;
 
