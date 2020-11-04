@@ -1,4 +1,4 @@
-package com.example.mobilesocialhub.eventcard;
+package com.example.mobilesocialhub.profile;
 
 import android.Manifest;
 import android.content.Context;
@@ -23,12 +23,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mobilesocialhub.MainActivity;
 import com.example.mobilesocialhub.R;
 import com.example.mobilesocialhub.databinding.ActivityFolderchildBinding;
+import com.example.mobilesocialhub.eventcard.Event;
 
 import java.util.List;
 import java.util.Locale;
 
 
-public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.FolderViewHolder>  {
+public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>  {
 
     private List<Event> event;
     final String TAG="Click";
@@ -36,14 +37,14 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
     private Context context;
 
 
-    public FolderCellAdapter(List<Event> event) {
+    public ProfileAdapter(List<Event> event) {
         this.event = event;
     }
 
-    public class FolderViewHolder extends RecyclerView.ViewHolder{
+    public class ProfileViewHolder extends RecyclerView.ViewHolder{
 
         private ActivityFolderchildBinding binding;
-        public FolderViewHolder(@NonNull ActivityFolderchildBinding binding) {
+        public ProfileViewHolder(@NonNull ActivityFolderchildBinding binding) {
             super(binding.getRoot());
             this.binding=binding;
         }
@@ -53,18 +54,18 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
 
     @NonNull
     @Override
-    public FolderCellAdapter.FolderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProfileAdapter.ProfileViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         ActivityFolderchildBinding binding = DataBindingUtil.inflate(inflater,
                 R.layout.activity_folderchild,parent,false);
-        return new FolderViewHolder(binding);
+        return new ProfileViewHolder(binding);
     }
 
 
 
     @Override
-    public void onBindViewHolder(@NonNull final FolderCellAdapter.FolderViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ProfileAdapter.ProfileViewHolder holder, int position) {
         holder.binding.usernamePublished.setText(event.get(position).getUsernamePublished());
         holder.binding.setEvent(event.get(position));
         //here change to the activity name
@@ -76,15 +77,15 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
         holder.binding.eventTime.setText(event.get(position).getEventTime());
         holder.binding.address.setText(event.get(position).getAddress());
 
-        holder.binding.elip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.w(TAG,"Test Click"+String.valueOf(holder.getAdapterPosition()));
-                Intent intent = new Intent(view.getContext(), MainActivity.class);
-                intent.putExtra("address",holder.binding.getEvent().getId());
-                view.getContext().startActivity(intent);
-            }
-        });
+//        holder.binding.elip.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.w(TAG,"Test Click"+String.valueOf(holder.getAdapterPosition()));
+//                Intent intent = new Intent(view.getContext(), MainActivity.class);
+//                intent.putExtra("address",holder.binding.getEvent().getId());
+//                view.getContext().startActivity(intent);
+//            }
+//        });
         holder.binding.gps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,11 +131,11 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
 
 
 
-    public interface OnElipsClick{
-        public void onelipsclick(View view);
-    }
+//    public interface OnElipsClick{
+//        public void onelipsclick(View view);
+//    }
 
-    public void setPicture(String activityName, FolderCellAdapter.FolderViewHolder holder){
+    public void setPicture(String activityName, ProfileAdapter.ProfileViewHolder holder){
         switch (activityName){
             case "sport":
                 holder.binding.activity.setImageResource(R.drawable.sport);

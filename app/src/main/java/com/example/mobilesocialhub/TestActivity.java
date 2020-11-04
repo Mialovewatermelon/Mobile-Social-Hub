@@ -8,23 +8,16 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.location.Location;
-import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.example.mobilesocialhub.eventcard.CreateEventFragment;
 import com.example.mobilesocialhub.eventcard.EventFragment;
 import com.example.mobilesocialhub.chat.ChatFragment;
 import com.example.mobilesocialhub.databinding.ActivityTestBinding;
-import com.example.mobilesocialhub.profile.ImageUtils;
 import com.example.mobilesocialhub.profile.ProfileFragment;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 

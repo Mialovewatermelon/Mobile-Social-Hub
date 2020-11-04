@@ -22,19 +22,28 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobilesocialhub.R;
-import com.example.mobilesocialhub.TestActivity;
+import com.example.mobilesocialhub.eventcard.Event;
+import com.example.mobilesocialhub.profile.ProfileAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.zxy.tiny.Tiny;
 import com.zxy.tiny.callback.FileWithBitmapCallback;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ProfileFragment extends Fragment implements View.OnClickListener{
@@ -66,6 +75,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     private Button chat;
 
     private Button follow;
+
+    private RecyclerView activities;
+
+    private List<Event> activityList;
 
 
     @Nullable
@@ -124,6 +137,47 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         background = view.findViewById(R.id.background_iv);
         chat = view.findViewById(R.id.chat_bt);
         follow = view.findViewById(R.id.follow_bt);
+        activities = view.findViewById(R.id.home_pager_content_list);
+        activities.setLayoutManager(new LinearLayoutManager(getContext()));
+        activityList=new ArrayList<>();
+        final ProfileAdapter adapter = new ProfileAdapter(activityList);
+        activities.setAdapter(adapter);
+
+
+
+        //Get Data from firebase
+        FirebaseDatabase database= FirebaseDatabase.getInstance();
+        final DatabaseReference eventRef = database.getReference().child("Events");
+        Log.w(TAG,"Completed connection！");
+        eventRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+                activityList.clear();
+
+                for(DataSnapshot snapshot:datasnapshot.getChildren()) {
+                    Log.w(TAG,"HI"+snapshot.getKey());
+                    String id = snapshot.getKey();
+                    String usernamePublished = snapshot.child("usernamePublished").getValue().toString();
+                    String datePublished = snapshot.child("datePublished").getValue().toString();
+                    String eventDate = snapshot.child("eventDate").getValue().toString();
+                    String eventTime = snapshot.child("eventTime").getValue().toString();
+                    String address = snapshot.child("address").getValue().toString();
+                    String activityName = snapshot.child("activityName").getValue().toString();
+                    activityList.add(new Event(usernamePublished, datePublished, eventDate, eventTime, address,id,activityName));
+                    Log.w(TAG, "Completed saving data");
+                    Log.w(TAG, activityList.get(0).getDatePublished());
+                }
+
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
     }
 
     /*
