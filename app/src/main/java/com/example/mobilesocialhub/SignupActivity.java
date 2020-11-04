@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobilesocialhub.databinding.ActivitySignupBinding;
@@ -26,6 +27,7 @@ public class SignupActivity extends AppCompatActivity {
     EditText confirmPassword;
     Button signup;
     FirebaseDatabase database;
+    TextView goToLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +38,20 @@ public class SignupActivity extends AppCompatActivity {
         password = mBinding.signupPassword;
         confirmPassword=mBinding.confirmPassword;
         signup = mBinding.signUpbutton;
+        goToLogin=mBinding.loginButton;
 
         database= FirebaseDatabase.getInstance();
         DatabaseReference userSignupRef = database.getReference().child("Users");
 
         String TAG="Login";
+
+        goToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), LoginActivity.class);
+                view.getContext().startActivity(intent);
+            }
+        });
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
