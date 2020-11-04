@@ -194,7 +194,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        String date = new String(year+"-" + monthOfYear + "-" + dayOfMonth);
+        String date = new String(year+"-" + (monthOfYear + 1) + "-" + dayOfMonth);
         eventDateText.setText(date);
     }
 
