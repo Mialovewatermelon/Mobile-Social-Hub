@@ -35,6 +35,7 @@ public class EventFragment extends Fragment {
 
     // Button callback
     OnButtonClick onButtonClick;
+    String username;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -145,6 +146,10 @@ public class EventFragment extends Fragment {
 
     public interface OnButtonClick{
         public void onclick(View view);
+    }
+
+    public void setUsername(String username){
+        this.username = username;
     }
 
 

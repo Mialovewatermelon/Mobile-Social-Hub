@@ -60,6 +60,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
     CircleImageView shopping;
     CircleImageView work;
     String activityIcon;
+    String username;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -154,7 +155,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
         switch (v.getId()) {
             case R.id.create_event_btn:
                 String address = eventPlaceText.getText().toString();
-                String usernamePublished = eventNameText.getText().toString();
+                String usernamePublished = this.username;
                 String datePublished = this.datePublished;
                 String eventDate = this.eventDateText.getText().toString();
                 String eventTime = this.eventTimeText.getText().toString();
@@ -213,5 +214,9 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
 
     public interface OnButtonClick{
         void onclick(View view);
+    }
+
+    public void setUsername(String username){
+        this.username=username;
     }
 }

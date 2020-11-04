@@ -29,6 +29,8 @@ public class TestActivity extends AppCompatActivity {
     ChatFragment chatFragment;
     CreateEventFragment createFragment;
     Fragment nowFragment;
+    String username;
+    String TAG="Test Activity";
 
     private void initPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -45,15 +47,27 @@ public class TestActivity extends AppCompatActivity {
         }
     }
 
+    private void checkIntent(){
+        Log.d(TAG,"intent is coming1");
+        if(getIntent().hasExtra("username")){
+            Log.d(TAG,"found");
+            username = getIntent().getStringExtra("username");
+            Log.d(TAG,username);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initPermission();
+        checkIntent();
 
 
         ActivityTestBinding testBinding = DataBindingUtil.setContentView(this, R.layout.activity_test);
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
+
+        // Create the event fragment
         eventFragment = new EventFragment();
         eventFragment.setOnButtonClick(new EventFragment.OnButtonClick() {
             @Override
@@ -61,7 +75,12 @@ public class TestActivity extends AppCompatActivity {
                 navContent(nowFragment, createFragment);
             }
         });
+        //setUsername event fragment username here
+        eventFragment.setUsername(username);
+
         chatFragment = new ChatFragment();
+
+        // Create the createactivity Fragment
         createFragment = new CreateEventFragment();
         createFragment.setOnButtonClick(new CreateEventFragment.OnButtonClick() {
             @Override
@@ -69,6 +88,9 @@ public class TestActivity extends AppCompatActivity {
                 navContent(nowFragment, eventFragment);
             }
         });
+        //set the createactivity Fragment
+        createFragment.setUsername(username);
+
 
         nowFragment = eventFragment;
         ChipNavigationBar bottomNavView = testBinding.chipNavigationBar;

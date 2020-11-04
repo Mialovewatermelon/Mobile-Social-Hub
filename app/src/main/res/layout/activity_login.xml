@@ -110,7 +110,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/LoginUserName"
                     android:layout_width="155dp"
                     android:layout_height="25dp"
                     android:background="@null"
@@ -165,7 +165,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
-                    android:id="@+id/editTextTextPassword3"
+                    android:id="@+id/LoginPassword"
                     android:layout_width="155dp"
                     android:layout_height="25dp"
                     android:background="@null"
@@ -187,7 +187,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="329dp" />
-
 
 
 
