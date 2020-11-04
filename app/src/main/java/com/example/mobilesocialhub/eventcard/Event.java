@@ -2,15 +2,18 @@ package com.example.mobilesocialhub.eventcard;
 
 import android.graphics.drawable.Drawable;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Event {
     private String id;
     private String usernamePublished;
     private String datePublished;
-    private Drawable activity;
     private String eventDate;
     private String eventTime;
     private String address;
     private String activityName;
+    private Map<String, String> attendent;
 
     public String getActivityName() {
         return activityName;
@@ -29,6 +32,8 @@ public class Event {
         this.address = address;
         this.activityName=activityName;
         this.id = id;
+        this.attendent = new HashMap<>();
+        attendent.put(usernamePublished, "1");
     }
 
     public String getUsernamePublished() {
@@ -45,10 +50,6 @@ public class Event {
 
     public void setDatePublished(String datePublished) {
         this.datePublished = datePublished;
-    }
-
-    public Drawable getActivity() {
-        return activity;
     }
 
 //    public void setActivity(Drawable activity) {

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.util.Log;
@@ -25,6 +26,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageException;
 import com.google.firebase.storage.StorageReference;
 import com.zxy.tiny.Tiny;
 import com.zxy.tiny.callback.FileWithBitmapCallback;
@@ -33,10 +35,10 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.FolderViewHolder>  {
+public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.FolderViewHolder> {
 
     private List<Event> event;
-    final String TAG="Click";
+    final String TAG = "Click";
     private boolean flag;
     private Context context;
 
@@ -45,15 +47,15 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
         this.event = event;
     }
 
-    public class FolderViewHolder extends RecyclerView.ViewHolder{
+    public class FolderViewHolder extends RecyclerView.ViewHolder {
 
         private ActivityFolderchildBinding binding;
+
         public FolderViewHolder(@NonNull ActivityFolderchildBinding binding) {
             super(binding.getRoot());
-            this.binding=binding;
+            this.binding = binding;
         }
     }
-
 
 
     @NonNull
@@ -62,10 +64,9 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
         context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         ActivityFolderchildBinding binding = DataBindingUtil.inflate(inflater,
-                R.layout.activity_folderchild,parent,false);
+                R.layout.activity_folderchild, parent, false);
         return new FolderViewHolder(binding);
     }
-
 
 
     @Override
@@ -84,7 +85,7 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
         holder.binding.elip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.w(TAG,"Test Click"+String.valueOf(holder.getAdapterPosition()));
+                Log.w(TAG, "Test Click" + String.valueOf(holder.getAdapterPosition()));
 //                Intent intent = new Intent(view.getContext(), MainActivity.class);
 //                intent.putExtra("address",holder.binding.getEvent().getId());
 //                view.getContext().startActivity(intent);
@@ -96,22 +97,17 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
                 LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
                 if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                         && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
                     Toast.makeText(context, "Please check the GPS permission is opened", Toast.LENGTH_LONG).show();
                     return;
                 }
                 Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                Location internetLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
                 if (location != null) {
                     //获取当前位置，这里只用到了经纬度
                     String latitude = String.format(Locale.ENGLISH,"%.5f", location.getLatitude());
                     String longitude = String.format(Locale.ENGLISH, "%.5f", location.getLongitude());
+
                     Intent intent = new Intent(Intent.ACTION_VIEW,
                             Uri.parse("http://maps.google.com/maps?"
                                     + "saddr="+ latitude+ "," + longitude
@@ -119,14 +115,27 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
                     );
                     intent.setClassName("com.google.android.apps.maps","com.google.android.maps.MapsActivity");
                     context.startActivity(intent);
-                } else {
+                } else if (internetLocation != null) {
+                    //获取当前位置，这里只用到了经纬度
+                    String latitude = String.format(Locale.ENGLISH,"%.5f", internetLocation.getLatitude());
+                    String longitude = String.format(Locale.ENGLISH, "%.5f", internetLocation.getLongitude());
+
+                    Intent intent = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://maps.google.com/maps?"
+                                    + "saddr="+ latitude+ "," + longitude
+                                    + "&daddr="  + holder.binding.address.getText().toString())
+                    );
+                    intent.setClassName("com.google.android.apps.maps","com.google.android.maps.MapsActivity");
+                    context.startActivity(intent);
+                }
+                else {
                     Toast.makeText(context, "Cannot get the GPS location", Toast.LENGTH_LONG).show();
                 }
             }
         });
         StorageReference storageRef = FirebaseStorage.getInstance().getReference();
         String username = holder.binding.usernamePublished.getText().toString();
-        storageRef.child("images/"+ username + "-head.jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+        storageRef.child("images/" + username + "-head.jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
                 // Got the download URL for 'users/me/profile.png'
