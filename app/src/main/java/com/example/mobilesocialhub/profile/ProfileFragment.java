@@ -50,6 +50,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
@@ -181,8 +182,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                     String eventTime = snapshot.child("eventTime").getValue().toString();
                     String address = snapshot.child("address").getValue().toString();
                     String activityName = snapshot.child("activityName").getValue().toString();
-                    if (usernamePublished.equals(username)) {
-                        activityList.add(new Event(usernamePublished, datePublished, eventDate, eventTime, address, id, activityName));
+                    Event event = new Event(usernamePublished, datePublished, eventDate, eventTime, address, id, activityName)
+                    Map<String, String> attendent = (Map<String, String>)snapshot.child("attendent").getValue();
+                    event.setAttendent(attendent);
+                    if (attendent.containsKey(username)) {
+                        activityList.add(event);
                     }
                 }
 
