@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -41,13 +42,12 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
         com.wdullaer.materialdatetimepicker.time.TimePickerDialog.OnTimeSetListener {
     ActivityCreateEventBinding mBinding;
     FirebaseDatabase database;
-    EditText eventNameText;
     EditText eventPlaceText;
     TextView eventDateText;
     TextView eventTimeText;
-    Button datePickBtn;
-    Button timePickBtn;
-    Button submitBtn;
+    ImageButton datePickBtn;
+    ImageButton timePickBtn;
+    ImageButton submitBtn;
     DatabaseReference eventRef;
     String datePublished;
     FragmentManager fm;
@@ -74,7 +74,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
         mBinding = DataBindingUtil.inflate(inflater,R.layout.activity_create_event,  container, false);
         database = FirebaseDatabase.getInstance();
         eventRef = database.getReference().child("Events");
-        eventNameText = mBinding.nameTextView;
+
         eventPlaceText = mBinding.placeTextView;
         eventDateText = mBinding.dateText;
         eventTimeText = mBinding.timeText;

@@ -102,10 +102,10 @@
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintHorizontal_bias="0.546"
             app:layout_constraintStart_toStartOf="@+id/guideline19"
             app:layout_constraintTop_toTopOf="@+id/guideline16"
-            app:layout_constraintVertical_bias="0.025" />
+            app:layout_constraintVertical_bias="0.255" />
 
         <TextView
             android:id="@+id/eventTime"
@@ -159,41 +159,7 @@
             app:layout_constraintVertical_bias="0.153"
             app:srcCompat="@drawable/clock" />
 
-        <TextView
-            android:id="@+id/only"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Only "
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.342"
-            app:layout_constraintStart_toStartOf="@+id/guideline19"
-            app:layout_constraintTop_toBottomOf="@+id/eventTime"
-            app:layout_constraintVertical_bias="0.137" />
 
-        <TextView
-            android:id="@+id/timeleft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4 hr "
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/only"
-            app:layout_constraintTop_toBottomOf="@+id/eventTime"
-            app:layout_constraintVertical_bias="0.138" />
-
-        <TextView
-            android:id="@+id/left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="left"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/timeleft"
-            app:layout_constraintTop_toBottomOf="@+id/eventTime"
-            app:layout_constraintVertical_bias="0.138" />
 
         <ImageView
             android:id="@+id/join_image"

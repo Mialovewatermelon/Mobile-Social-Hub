@@ -20,6 +20,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mobilesocialhub.CommentActivity;
 import com.example.mobilesocialhub.R;
 import com.example.mobilesocialhub.databinding.ActivityFolderchildBinding;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -93,7 +94,7 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
                 else {
                     attendent.put(username, "1");
                     databaseRef.child("attendent").setValue(attendent);
-                    Toast.makeText(context, "Congraduation! You are successfully joined", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Congratulation! You are successfully joined", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -107,9 +108,11 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
             @Override
             public void onClick(View view) {
                 Log.w(TAG, "Test Click" + String.valueOf(holder.getAdapterPosition()));
-//                Intent intent = new Intent(view.getContext(), MainActivity.class);
-//                intent.putExtra("address",holder.binding.getEvent().getId());
-//                view.getContext().startActivity(intent);
+                Intent intent = new Intent(view.getContext(), CommentActivity.class);
+                intent.putExtra("username",username);
+                intent.putExtra("eventID",event.get(position).getId());
+                System.out.println(event.get(position).getId());
+                view.getContext().startActivity(intent);
             }
         });
         holder.binding.gps.setOnClickListener(new View.OnClickListener() {

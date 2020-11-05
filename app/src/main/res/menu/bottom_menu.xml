@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/home_info"
-        android:icon="@drawable/call"
+        android:icon="@drawable/watermelon"
         android:title="Home"
         app:cnb_iconColor="#777777"/>
     <item
         android:id="@+id/activity_info"
-        android:icon="@drawable/picture"
+        android:icon="@drawable/activity"
         android:title="Activity"
         app:cnb_iconColor="#999999"/>
     <item
         android:id="@+id/person_info"
-        android:icon="@drawable/plan"
+        android:icon="@drawable/individual"
         android:title="Favorites"
         app:cnb_iconColor="#DDDDDD" />
 </menu>

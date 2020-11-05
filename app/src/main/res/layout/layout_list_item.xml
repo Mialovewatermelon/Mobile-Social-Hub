@@ -13,12 +13,12 @@
         android:paddingLeft="15dp"
         android:paddingTop="15dp">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv"
             android:layout_width="65dp"
             android:layout_height="59dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/lsc" />
+            android:src="@drawable/people" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,12 +31,6 @@
                 android:text="李硕成"
 
                 android:textSize="20sp"/>
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2020-10-01"
-                android:textSize="15sp"/>
 
             <TextView
                 android:id="@+id/content"

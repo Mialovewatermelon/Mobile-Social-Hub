@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="458dp" />
+            app:layout_constraintGuide_begin="389dp" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -69,38 +69,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline3">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Activity Name"
-                    android:src="@drawable/activityicon"
                     android:paddingStart="50dp"
-                    android:paddingEnd="10dp"/>
-                <EditText
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:layout_width="250dp"
-                    android:layout_height="match_parent"
-                    android:hint="Activity Name"
-                    android:id="@+id/nameTextView"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="Activity Name"
-                    android:src="@drawable/dateicon"
-                    android:paddingStart="50dp"
-                    android:paddingEnd="10dp"/>
+                    android:paddingEnd="10dp"
+                    android:src="@drawable/dateicon" />
 
                 <TextView
                     android:id="@+id/date_text"
@@ -109,11 +91,15 @@
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
                     android:textSize="18sp" />
-                <Button
+
+                <ImageButton
                     android:id="@+id/date_pick_btn"
-                    android:layout_marginStart="10dp"
                     android:layout_width="30dp"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="#00FF0000"
+                    tools:src="@drawable/add" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -134,11 +120,14 @@
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
                     android:textSize="18sp" />
-                <Button
+                <ImageButton
                     android:id="@+id/time_pick_btn"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/dp10"
                     android:layout_width="30dp"
-                    android:layout_height="match_parent"/>
+                    android:background="#00FF0000"
+                    tools:src="@drawable/add"
+                    android:layout_height="30dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -280,17 +269,21 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
+        <ImageButton
             android:id="@+id/create_event_btn"
-            android:layout_width="60dp"
-            android:layout_height="31dp"
+            android:layout_width="40dp"
+            android:layout_height="41dp"
+            android:background="#00FF0000"
             android:text="Button"
             app:civ_border_color="@color/mdtp_transparent_black"
             app:civ_border_width="1dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.78"
             app:layout_constraintStart_toEndOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="@+id/guideline" />
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            app:layout_constraintVertical_bias="1.0"
+            tools:src="@drawable/addevent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

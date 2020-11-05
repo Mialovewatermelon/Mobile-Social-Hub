@@ -45,7 +45,6 @@ public class EventFragment extends Fragment {
     private FragmentEventBinding mBinding;
     FirebaseDatabase database;
     final String TAG = "Database";
-    OnElipsClick onElipsClick;
 
     private List<Event> eventsList;
 
@@ -155,14 +154,6 @@ public class EventFragment extends Fragment {
     }
 
 
-
-    public interface OnElipsClick{
-        public void onelipsclick(View view);
-    }
-
-    public void setOnElipsClick(OnElipsClick onElipsClick){
-        this.onElipsClick=onElipsClick;
-    }
 
 
 
