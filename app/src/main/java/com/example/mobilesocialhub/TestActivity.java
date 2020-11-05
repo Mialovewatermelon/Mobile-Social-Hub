@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.mobilesocialhub.eventcard.CommentFragment;
 import com.example.mobilesocialhub.eventcard.CreateEventFragment;
 import com.example.mobilesocialhub.eventcard.EventFragment;
 import com.example.mobilesocialhub.chat.ChatFragment;
@@ -30,6 +31,7 @@ public class TestActivity extends AppCompatActivity {
     ProfileFragment profileFragment;
     Fragment nowFragment;
     String username;
+    CommentFragment commentFragment;
     String TAG="Test Activity";
 
     private void initPermission() {
@@ -55,6 +57,8 @@ public class TestActivity extends AppCompatActivity {
         }
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +78,14 @@ public class TestActivity extends AppCompatActivity {
         });
         //setUsername event fragment username here
         eventFragment.setUsername(username);
+
+        eventFragment.setOnElipsClick(new EventFragment.OnElipsClick() {
+            @Override
+            public void onelipsclick(View view) {
+                commentFragment = new CommentFragment();
+                commentFragment.setUsername(username);
+            }
+        });
 
         chatFragment = new ChatFragment();
 
