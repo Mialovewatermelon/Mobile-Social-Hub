@@ -16,7 +16,6 @@ import android.view.View;
 
 import com.example.mobilesocialhub.eventcard.CreateEventFragment;
 import com.example.mobilesocialhub.eventcard.EventFragment;
-import com.example.mobilesocialhub.chat.ChatFragment;
 import com.example.mobilesocialhub.databinding.ActivityTestBinding;
 import com.example.mobilesocialhub.profile.ProfileFragment;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
@@ -24,7 +23,6 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 public class TestActivity extends AppCompatActivity {
     boolean flag;
     EventFragment eventFragment;
-    ChatFragment chatFragment;
     CreateEventFragment createFragment;
     ProfileFragment profileFragment;
     Fragment nowFragment;
@@ -75,17 +73,8 @@ public class TestActivity extends AppCompatActivity {
         });
         //setUsername event fragment username here
         eventFragment.setUsername(username);
-
-        chatFragment = new ChatFragment();
-
         // Create the createactivity Fragment
         createFragment = new CreateEventFragment();
-        createFragment.setOnButtonClick(new CreateEventFragment.OnButtonClick() {
-            @Override
-            public void onclick(View view) {
-                navContent(nowFragment, eventFragment);
-            }
-        });
         profileFragment = new ProfileFragment(this.username);
 
         //set the createactivity Fragment

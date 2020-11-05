@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -17,10 +18,13 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobilesocialhub.CommentActivity;
+import com.example.mobilesocialhub.ProfileActivity;
 import com.example.mobilesocialhub.R;
 import com.example.mobilesocialhub.databinding.ActivityFolderchildBinding;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -81,23 +85,29 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
         Map<String, String> attendent = event.get(position).getAttendent();
         //here change to the activity name
         setPicture(event.get(position).getActivityName(), holder);
+        Drawable drawable = ResourcesCompat.getDrawable(context.getResources(), R.drawable.activityicon, null);
+        if (attendent.containsKey(username)) holder.binding.joinImage.setImageDrawable(drawable);
+        else {
+            //join event
+            holder.binding.joinImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String id = event.get(position).getId();
+                    DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("Events/" + id);
+                    if (attendent.containsKey(username)) {
+                        Toast.makeText(context, "You are already in this event", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        attendent.put(username, "1");
+                        databaseRef.child("attendent").setValue(attendent);
+                        Toast.makeText(context, "Congratulation! You are successfully joined", Toast.LENGTH_SHORT).show();
+                        holder.binding.joinImage.setImageDrawable(drawable);
+                    }
+                }
+            });
+        }
 
-        //join event
-        holder.binding.joinImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String id = event.get(position).getId();
-                DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("Events/" + id);
-                if (attendent.containsKey(username)) {
-                    Toast.makeText(context, "You are already in this event", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    attendent.put(username, "1");
-                    databaseRef.child("attendent").setValue(attendent);
-                    Toast.makeText(context, "Congratulation! You are successfully joined", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+
 
         holder.binding.datePublished.setText(event.get(position).getDatePublished());
         holder.binding.eventDate.setText(event.get(position).getEventDate());
@@ -182,6 +192,14 @@ public class FolderCellAdapter extends RecyclerView.Adapter<FolderCellAdapter.Fo
             }
         });
 
+        holder.binding.profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProfileActivity.class);
+                intent.putExtra("username", username);
+                context.startActivity(intent);
+            }
+        });
 
     }
 

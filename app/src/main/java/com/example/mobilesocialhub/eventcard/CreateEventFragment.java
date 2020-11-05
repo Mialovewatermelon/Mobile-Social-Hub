@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -47,11 +48,10 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
     TextView eventTimeText;
     ImageButton datePickBtn;
     ImageButton timePickBtn;
-    ImageButton submitBtn;
+    ImageView submitBtn;
     DatabaseReference eventRef;
     String datePublished;
     FragmentManager fm;
-    OnButtonClick onButtonClick;
     TextView activityChosen;
     CircleImageView sport;
     CircleImageView coffee;
@@ -164,9 +164,6 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
                 Event newEvent = new Event(usernamePublished, datePublished, eventDate, eventTime, address, uuid,activityName);
                 eventRef.child(uuid).setValue(newEvent);
                 Toast.makeText(v.getContext(), "Event has been created", Toast.LENGTH_LONG).show();
-                if (this.onButtonClick != null) {
-                    this.onButtonClick.onclick(v);
-                }
                 break;
             case R.id.date_pick_btn:
                 Calendar now = Calendar.getInstance();
@@ -204,17 +201,6 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
         eventTimeText.setText(time);
     }
 
-    public CreateEventFragment.OnButtonClick getOnButtonClick() {
-        return this.onButtonClick;
-    }
-
-    public void setOnButtonClick(CreateEventFragment.OnButtonClick onButtonClick) {
-        this.onButtonClick = onButtonClick;
-    }
-
-    public interface OnButtonClick{
-        void onclick(View view);
-    }
 
     public void setUsername(String username){
         this.username=username;

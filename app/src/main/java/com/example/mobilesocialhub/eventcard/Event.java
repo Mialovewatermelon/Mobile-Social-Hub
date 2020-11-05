@@ -33,9 +33,8 @@ public class Event {
         this.activityName=activityName;
         this.id = id;
         this.attendent = new HashMap<>();
-        if (attendent == null) {
-            attendent.put(usernamePublished, "1");
-        }
+        attendent.put(usernamePublished, "1");
+
     }
 
     public String getUsernamePublished() {

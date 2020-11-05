@@ -50,6 +50,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
@@ -74,26 +75,15 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     private ImageView cover;
 
-    private TextView qianming;
+    private TextView usernameView;
 
     private ImageView background;
-
-    private Button chat;
-
-    private Button follow;
 
     private RecyclerView activities;
 
     private List<Event> activityList;
 
     private String username;
-
-    private FirebaseDatabase database;
-
-    private Storage storage;
-
-    private String headPath;
-    private String backgroundPath;
 
     public ProfileFragment(String username) {
         this.username = username;
@@ -118,18 +108,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        chat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        follow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
         background.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -154,14 +132,13 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         back = view.findViewById(R.id.back_iv);
         cover = view.findViewById(R.id.cover_im);
         background = view.findViewById(R.id.background_iv);
-        chat = view.findViewById(R.id.chat_bt);
-        follow = view.findViewById(R.id.follow_bt);
         activities = view.findViewById(R.id.home_pager_content_list);
         activities.setLayoutManager(new LinearLayoutManager(getContext()));
         activityList = new ArrayList<>();
         final ProfileAdapter adapter = new ProfileAdapter(activityList);
         activities.setAdapter(adapter);
-
+        usernameView = view.findViewById(R.id.qianming_tv);
+        usernameView.setText(username);
 
         //Get Data from firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -181,7 +158,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                     String eventTime = snapshot.child("eventTime").getValue().toString();
                     String address = snapshot.child("address").getValue().toString();
                     String activityName = snapshot.child("activityName").getValue().toString();
-                    if (usernamePublished.equals(username)) {
+                    Event event = new Event(usernamePublished, datePublished, eventDate, eventTime, address, id, activityName);
+                    Map<String, String> attendent = (Map<String, String>)snapshot.child("attendent").getValue();
+                    event.setAttendent(attendent);
+                    if (attendent.containsKey(username)) {
                         activityList.add(new Event(usernamePublished, datePublished, eventDate, eventTime, address, id, activityName));
                     }
                 }

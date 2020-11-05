@@ -100,6 +100,7 @@ public class EventFragment extends Fragment {
                     String address = snapshot.child("address").getValue().toString();
                     String activityName = snapshot.child("activityName").getValue().toString();
                     Event event  = new Event(usernamePublished, datePublished, eventDate, eventTime, address,id,activityName);
+                    Log.i("eventFragment", snapshot.child("attendent").getValue().toString());
                     Map<String, String> attendent = (Map<String, String>) snapshot.child("attendent").getValue();
                     event.setAttendent(attendent);
                     eventsList.add(event);
@@ -113,18 +114,6 @@ public class EventFragment extends Fragment {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
-
-        // add add event button
-        Button addEventBtn = mBinding.addEventBtn;
-        addEventBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (onButtonClick != null) {
-                    // set commentfragment string id's value
-                    onButtonClick.onclick(v);
-                }
             }
         });
 

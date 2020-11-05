@@ -11,10 +11,11 @@
         android:background="#A9B6AA">
 
         <Button
+            android:id="@+id/back_chat"
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_gravity="center"
-            android:background="@drawable/call" />
+            android:background="@mipmap/back" />
     </LinearLayout>
 
 <!--        <LinearLayout-->

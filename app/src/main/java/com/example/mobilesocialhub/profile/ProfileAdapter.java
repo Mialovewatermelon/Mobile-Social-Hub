@@ -82,7 +82,8 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileV
         holder.binding.eventDate.setText(event.get(position).getEventDate());
         holder.binding.eventTime.setText(event.get(position).getEventTime());
         holder.binding.address.setText(event.get(position).getAddress());
-
+        holder.binding.joinImage.setVisibility(View.INVISIBLE);
+        holder.binding.elip.setVisibility(View.INVISIBLE);
 //        holder.binding.elip.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {

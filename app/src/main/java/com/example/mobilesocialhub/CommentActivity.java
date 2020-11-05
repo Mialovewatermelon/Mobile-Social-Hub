@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.mobilesocialhub.chat.ChatActivity;
 import com.example.mobilesocialhub.databinding.FragmentCommentBinding;
 import com.example.mobilesocialhub.eventcard.Comment;
 import com.example.mobilesocialhub.eventcard.FolderCellAdapter;
@@ -71,8 +73,6 @@ public class CommentActivity extends AppCompatActivity {
 
                     list.add(new Comment(username, content));
                     Log.w(TAG, "Completed comment loading");
-                    System.out.println(username);
-                    System.out.println(content);
 
                 }
 
@@ -134,7 +134,6 @@ public class CommentActivity extends AppCompatActivity {
                             Toast.makeText(v.getContext(), "You are already in this event", Toast.LENGTH_SHORT).show();
                         }
                         else {
-
                             eventRef.child("attendent").child(username).setValue("1");
                             Toast.makeText(v.getContext(), "Congratulation! You are successfully joined", Toast.LENGTH_SHORT).show();
                         }
@@ -175,9 +174,14 @@ public class CommentActivity extends AppCompatActivity {
                     String uuid = UUID.randomUUID().toString();
                     commentRef.child(uuid).setValue(newComment);
                     mBinding.inputText.setText(""); // 清空输入框中的内容
-
-
                 }
+            }
+        });
+        mBinding.elip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ChatActivity.class);
+                startActivity(intent);
             }
         });
 

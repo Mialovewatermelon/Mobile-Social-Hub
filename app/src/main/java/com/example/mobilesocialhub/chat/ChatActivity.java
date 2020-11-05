@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +18,7 @@ import com.example.mobilesocialhub.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChatFragment extends Fragment {
+public class ChatActivity extends AppCompatActivity {
 
     public final static String TAG = "TEST";
 
@@ -31,25 +32,21 @@ public class ChatFragment extends Fragment {
 
     private MsgAdapter adapter;
 
-    public ChatFragment(){
-        super();
-    }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_chat_page, container, false);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_chat_page);
         initMsgs(); // 初始化消息数据
-        inputText =  view.findViewById(R.id.input_text);
-        send =  view.findViewById(R.id.send);
-        msgRecyclerView = view.findViewById(R.id.msg_recycler_view);
+        inputText = findViewById(R.id.input_text);
+        send = findViewById(R.id.send);
+        msgRecyclerView = findViewById(R.id.msg_recycler_view);
 
         Log.d(TAG, "running here");
         Log.d(TAG, String.valueOf(msgRecyclerView == null));
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         msgRecyclerView.setLayoutManager(layoutManager);
-
 
 
         adapter = new MsgAdapter(msgList);
@@ -67,8 +64,15 @@ public class ChatFragment extends Fragment {
                 }
             }
         });
+        Button back = findViewById(R.id.back_chat);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
-        return view;
+
     }
 
     private void initMsgs() {
