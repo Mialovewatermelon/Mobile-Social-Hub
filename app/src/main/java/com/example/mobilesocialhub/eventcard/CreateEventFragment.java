@@ -61,11 +61,17 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
     CircleImageView work;
     String activityIcon;
     String username;
+    boolean isChooseDate;
+    boolean isChooseTime;
+    boolean isChooseActivity;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fm = getFragmentManager();
+        isChooseActivity = false;
+        isChooseDate = false;
+        isChooseTime = false;
     }
 
     @Nullable
@@ -104,6 +110,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
                activityChosen.setText("Let's go for a coffee!");
                activityIcon = "coffee";
                Log.w("create","I click");
+               isChooseActivity = true;
             }
         });
 
@@ -112,6 +119,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
             public void onClick(View view) {
                 activityChosen.setText("Let's go shopping");
                 activityIcon = "shopping";
+                isChooseActivity = true;
             }
         });
 
@@ -120,6 +128,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
             public void onClick(View view) {
                 activityChosen.setText("Let's work together");
                 activityIcon = "work";
+                isChooseActivity = true;
             }
         });
 
@@ -128,6 +137,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
             public void onClick(View view) {
                 activityChosen.setText("Let's dining out");
                 activityIcon = "dining";
+                isChooseActivity = true;
             }
         });
 
@@ -136,6 +146,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
             public void onClick(View view) {
                 activityChosen.setText("Let's go for a date");
                 activityIcon = "date";
+                isChooseActivity = true;
             }
         });
 
@@ -144,6 +155,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
             public void onClick(View view) {
                 activityChosen.setText("Let's exercise together");
                 activityIcon = "sport";
+                isChooseActivity = true;
             }
         });
 
@@ -155,6 +167,10 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
         switch (v.getId()) {
             case R.id.create_event_btn:
                 String address = eventPlaceText.getText().toString();
+                if (!isChooseTime || !isChooseDate || !isChooseActivity || address.equals("") ) {
+                    Toast.makeText(v.getContext(), "Please finish all choices", Toast.LENGTH_LONG).show();
+                    break;
+                }
                 String usernamePublished = this.username;
                 String datePublished = this.datePublished;
                 String eventDate = this.eventDateText.getText().toString();
@@ -174,6 +190,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
                         now.get(Calendar.DAY_OF_MONTH) // Inital day selection
                 );
                 dpd.show(getFragmentManager(), "Datepickerdialog");
+                isChooseDate = true;
                 break;
 
             case R.id.time_pick_btn:
@@ -182,6 +199,7 @@ public class CreateEventFragment extends Fragment implements View.OnClickListene
                         true
                 );
                 tpd.show(getFragmentManager(), "Datepickerdialog");
+                isChooseTime = true;
                 break;
 
 
