@@ -61,6 +61,12 @@ public class ProfileActivity extends AppCompatActivity {
         activities.setAdapter(adapter);
         usernameView = findViewById(R.id.qianming_tv);
         usernameView.setText(username);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         StorageReference storageRef = FirebaseStorage.getInstance().getReference();
         storageRef.child("images/"+ username + "-head.jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override

@@ -34,7 +34,6 @@ public class Event {
         this.id = id;
         this.attendent = new HashMap<>();
         attendent.put(usernamePublished, "1");
-
     }
 
     public String getUsernamePublished() {
