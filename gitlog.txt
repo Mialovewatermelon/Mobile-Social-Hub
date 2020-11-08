@@ -1,0 +1,585 @@
+commit 1ff74987236b847db9e853211fc23a54e334c158
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Sun Nov 8 19:19:47 2020 +1100
+
+            deleted:    gitlog.txt
+
+commit f8ff8a7e105150236a78a429e8e18d8a2b33b1eb
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Sun Nov 8 19:19:28 2020 +1100
+
+            new file:   gitlog.txt
+
+commit d5662860037983139d08ce5c67f1052d79970c8a
+Merge: 6c94cd2 2b00e0d
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Sun Nov 8 19:17:22 2020 +1100
+
+    all
+
+commit 2b00e0d9b3a8b3f547f8f3c39bab1b12c0b558f1
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Sun Nov 8 19:17:05 2020 +1100
+
+    nothing
+
+commit 6c94cd2bcba7a98c2c65fd3a3bcf25dc07e5bc6d
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Sun Nov 8 19:16:01 2020 +1100
+
+    nothing
+
+commit bb5176d12c0d2f2ea2d7fdb97f3e1d8b7c9cfa5a
+Merge: cdfdf59 06fd090
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Sun Nov 8 18:57:43 2020 +1100
+
+    merge
+
+commit 06fd09064c9896b134410e4331a027ebac56580b
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Sun Nov 8 18:54:32 2020 +1100
+
+    123
+
+commit 3641456aff9ac8bbde91bd4bc613d314f9ec99b2
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Sat Nov 7 09:53:35 2020 +1100
+
+    create modified
+
+commit b73c3b7137fe1220c47ab1e47393cb24b27a83d5
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Sat Nov 7 09:11:41 2020 +1100
+
+    version1.3
+
+commit d159b8d768f80516879c93a60c99ed1bbb9aa9ac
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Fri Nov 6 22:22:10 2020 +1100
+
+    123
+
+commit 92348681847ae399f72a3ba4b183b418180f1214
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Fri Nov 6 03:43:44 2020 +1100
+
+    123
+
+commit db763b717d5cd4bfb6e83e1fb04b25e024c84624
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Fri Nov 6 00:38:06 2020 +1100
+
+    Overall Change
+    
+    Add comment
+    change picture
+    Bugs: the image button is not showing
+
+commit a3d6ee74c9fe324d5145136e5dd87ec90cb1f528
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Thu Nov 5 20:22:38 2020 +1100
+
+    Comment added (not done)
+
+commit e4e79eb10621d154cbdb6079bd985ed21d7ef02e
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Thu Nov 5 06:23:05 2020 +1100
+
+    version1.0
+
+commit 6e2a44e1d461d01e4c2df1a6d81192c07b744a9c
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Thu Nov 5 05:21:20 2020 +1100
+
+    123
+
+commit ea4c8841f44a514a706ea2f95787ae1d1b306f82
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Thu Nov 5 03:55:51 2020 +1100
+
+    version1
+
+commit 2aa28f89b256f2aa7bed5ade4eb7e82049625769
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Thu Nov 5 00:32:16 2020 +1100
+
+    all
+
+commit d808ac28f8d423e179c0198016d8d5280d1a034f
+Merge: a4a929d 54eb6a7
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Thu Nov 5 00:29:07 2020 +1100
+
+    123
+
+commit a4a929dec553d79df2779fe5eaaf3ae8e2dc6b00
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Thu Nov 5 00:24:29 2020 +1100
+
+    123
+
+commit 1670dca3afab50e550751c3190202f4339070b54
+Merge: 0532a98 4d5c408
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Thu Nov 5 00:16:07 2020 +1100
+
+    Merge branch 'Mia' into testDev
+    
+            .gradle/6.5/executionHistory/executionHistory.bin
+            .gradle/6.5/executionHistory/executionHistory.lock
+            .gradle/6.5/fileHashes/fileHashes.bin
+            .gradle/6.5/fileHashes/fileHashes.lock
+            .gradle/6.5/fileHashes/resourceHashesCache.bin
+            .gradle/6.5/javaCompile/classAnalysis.bin
+            .gradle/6.5/javaCompile/jarAnalysis.bin
+            .gradle/6.5/javaCompile/javaCompile.lock
+            .gradle/6.5/javaCompile/taskHistory.bin
+            .gradle/buildOutputCleanup/buildOutputCleanup.lock
+            .gradle/buildOutputCleanup/outputFiles.bin
+            .gradle/checksums/checksums.lock
+            .gradle/checksums/md5-checksums.bin
+            .gradle/checksums/sha1-checksums.bin
+            app/build.gradle
+            app/src/main/AndroidManifest.xml
+            app/src/main/java/com/example/mobilesocialhub/TestActivity.java
+            app/src/main/res/values/dimens.xml
+
+commit 4d5c4084898759f08a923dfaef40bff4706937f2
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Wed Nov 4 23:45:33 2020 +1100
+
+    Sign up to Login complete
+    
+    Direct to Login from signup
+
+commit aa7b0c8deebaf43aff8160578205529915dbd159
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Wed Nov 4 23:38:07 2020 +1100
+
+    Add one picture upload
+
+commit 54eb6a7db0469d9804d3f5dc8e88b089fa5e6aa3
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Wed Nov 4 23:29:55 2020 +1100
+
+            modified:   .gradle/6.5/executionHistory/executionHistory.bin
+            modified:   .gradle/6.5/executionHistory/executionHistory.lock
+            modified:   .gradle/6.5/fileHashes/fileHashes.bin
+            modified:   .gradle/6.5/fileHashes/fileHashes.lock
+            modified:   .gradle/6.5/fileHashes/resourceHashesCache.bin
+            modified:   .gradle/6.5/javaCompile/classAnalysis.bin
+            modified:   .gradle/6.5/javaCompile/jarAnalysis.bin
+            modified:   .gradle/6.5/javaCompile/javaCompile.lock
+            modified:   .gradle/6.5/javaCompile/taskHistory.bin
+            modified:   .gradle/buildOutputCleanup/buildOutputCleanup.lock
+            modified:   .gradle/buildOutputCleanup/outputFiles.bin
+            modified:   .gradle/checksums/checksums.lock
+            modified:   .gradle/checksums/md5-checksums.bin
+            modified:   .gradle/checksums/sha1-checksums.bin
+            modified:   app/build.gradle
+            modified:   app/src/main/AndroidManifest.xml
+            modified:   app/src/main/res/values/dimens.xml
+
+commit 26e73093672cdb92517a13d0b145a6d47fb69191
+Merge: 0532a98 e4a9753
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Wed Nov 4 23:18:22 2020 +1100
+
+    Merge remote-tracking branch 'origin/Mia' into testDev
+    
+            .gradle/6.5/executionHistory/executionHistory.bin
+            .gradle/6.5/executionHistory/executionHistory.lock
+            .gradle/6.5/fileHashes/fileHashes.bin
+            .gradle/6.5/fileHashes/fileHashes.lock
+            .gradle/6.5/fileHashes/resourceHashesCache.bin
+            .gradle/6.5/javaCompile/classAnalysis.bin
+            .gradle/6.5/javaCompile/jarAnalysis.bin
+            .gradle/6.5/javaCompile/javaCompile.lock
+            .gradle/6.5/javaCompile/taskHistory.bin
+            .gradle/buildOutputCleanup/buildOutputCleanup.lock
+            .gradle/buildOutputCleanup/outputFiles.bin
+            .gradle/checksums/checksums.lock
+            .gradle/checksums/md5-checksums.bin
+            .gradle/checksums/sha1-checksums.bin
+            app/build.gradle
+            app/src/main/res/values/dimens.xml
+    
+            .git/MERGE_HEAD
+    
+            modified:   app/build.gradle
+            modified:   app/src/main/AndroidManifest.xml
+            new file:   app/src/main/java/com/example/mobilesocialhub/LoginActivity.java
+            new file:   app/src/main/java/com/example/mobilesocialhub/SignupActivity.java
+            modified:   app/src/main/java/com/example/mobilesocialhub/eventcard/FolderCellAdapter.java
+            new file:   app/src/main/res/drawable/login_button.xml
+            new file:   app/src/main/res/drawable/login_edittext.xml
+            new file:   app/src/main/res/drawable/logo.png
+            new file:   app/src/main/res/layout/activity_login.xml
+            new file:   app/src/main/res/layout/activity_signup.xml
+            new file:   app/src/main/res/values-round/strings.xml
+    modified:   app/src/main/res/values/dimens.xml
+            modified:   app/src/main/res/values/strings.xml
+
+commit 0532a987ebef7f4c4414e332610fcd3994bb60ee
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Wed Nov 4 23:16:28 2020 +1100
+
+            modified:   .gradle/6.5/executionHistory/executionHistory.lock
+            modified:   .gradle/6.5/fileHashes/fileHashes.lock
+
+commit 4a6f1c54fc0b59e13d07185b4913845a84ad7537
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Wed Nov 4 22:10:34 2020 +1100
+
+    Login and signup added (without camera)
+    
+    The login and signup layout has completed
+    The database has connected
+    user can login or sign up
+    The username will now pass to the create event and event fragment(for the comment username)
+
+commit 72f75179b1a42f8a6d99300bd23b28c367b67335
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Wed Nov 4 20:29:09 2020 +1100
+
+            modified:   .gradle/6.5/executionHistory/executionHistory.bin
+            modified:   .gradle/6.5/executionHistory/executionHistory.lock
+            modified:   .gradle/6.5/fileHashes/fileHashes.bin
+            modified:   .gradle/6.5/fileHashes/fileHashes.lock
+            modified:   .gradle/6.5/javaCompile/classAnalysis.bin
+            modified:   .gradle/6.5/javaCompile/javaCompile.lock
+            modified:   .gradle/6.5/javaCompile/taskHistory.bin
+            modified:   .gradle/buildOutputCleanup/buildOutputCleanup.lock
+            modified:   app/build.gradle
+            modified:   app/src/main/java/com/example/mobilesocialhub/TestActivity.java
+            modified:   app/src/main/java/com/example/mobilesocialhub/eventcard/FolderCellAdapter.java
+            deleted:    app/src/main/java/com/example/mobilesocialhub/profile/ImageUtils.java
+            new file:   app/src/main/java/com/example/mobilesocialhub/profile/ProfileAdapter.java
+            modified:   app/src/main/java/com/example/mobilesocialhub/profile/ProfileFragment.java
+            modified:   app/src/main/res/layout/fragment_self_profile.xml
+
+commit 97e64f7d488b9577fab6820df316be309ea9413b
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Wed Nov 4 19:32:45 2020 +1100
+
+    revert camera
+
+commit 2f3db988c3684e4194b5a246174daf5434a26244
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Wed Nov 4 06:54:22 2020 +1100
+
+            modified:   .gradle/6.5/executionHistory/executionHistory.bin
+            modified:   .gradle/6.5/executionHistory/executionHistory.lock
+            modified:   .gradle/6.5/fileHashes/fileHashes.bin
+            modified:   .gradle/6.5/fileHashes/fileHashes.lock
+            modified:   .gradle/6.5/fileHashes/resourceHashesCache.bin
+            modified:   .gradle/6.5/javaCompile/classAnalysis.bin
+            modified:   .gradle/6.5/javaCompile/jarAnalysis.bin
+            modified:   .gradle/6.5/javaCompile/javaCompile.lock
+            modified:   .gradle/6.5/javaCompile/taskHistory.bin
+            modified:   .gradle/buildOutputCleanup/buildOutputCleanup.lock
+            modified:   .gradle/buildOutputCleanup/outputFiles.bin
+            modified:   .gradle/checksums/checksums.lock
+            modified:   .gradle/checksums/md5-checksums.bin
+            modified:   .gradle/checksums/sha1-checksums.bin
+            modified:   app/build.gradle
+            modified:   app/src/main/java/com/example/mobilesocialhub/profile/ProfileFragment.java
+            new file:   app/src/main/res/drawable-v24/dialog_bg_shape.xml
+            new file:   app/src/main/res/layout/dialog_select_photo.xml
+            modified:   app/src/main/res/layout/fragment_self_profile.xml
+            new file:   app/src/main/res/values/dimens.xml
+
+commit 9e140fc900122d97b2d0f17080ddb2a0fcd7764e
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Wed Nov 4 06:40:40 2020 +1100
+
+    all
+
+commit e4a97533a9a22b9f217129f6c53535db3e0904e6
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Wed Nov 4 00:42:45 2020 +1100
+
+    Login Signup Layout added
+    
+    Layout added
+
+commit ab9be54078b6fcbe053e8e1a432bc806926f203a
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Tue Nov 3 22:48:56 2020 +1100
+
+            modified:   .gradle/6.5/executionHistory/executionHistory.bin
+            modified:   .gradle/6.5/executionHistory/executionHistory.lock
+            modified:   .gradle/6.5/fileHashes/fileHashes.bin
+            modified:   .gradle/6.5/fileHashes/fileHashes.lock
+            modified:   .gradle/6.5/fileHashes/resourceHashesCache.bin
+            modified:   .gradle/6.5/javaCompile/classAnalysis.bin
+            modified:   .gradle/6.5/javaCompile/jarAnalysis.bin
+            modified:   .gradle/6.5/javaCompile/javaCompile.lock
+            modified:   .gradle/6.5/javaCompile/taskHistory.bin
+            modified:   .gradle/buildOutputCleanup/buildOutputCleanup.lock
+            modified:   app/src/main/AndroidManifest.xml
+            new file:   app/src/main/java/com/example/mobilesocialhub/MainActivity.java
+            new file:   app/src/main/java/com/example/mobilesocialhub/TestFragment.java
+            new file:   app/src/main/java/com/example/mobilesocialhub/album/Albums.java
+            new file:   app/src/main/java/com/example/mobilesocialhub/album/Camera.java
+            new file:   app/src/main/java/com/example/mobilesocialhub/album/MainActivity.java
+            modified:   app/src/main/java/com/example/mobilesocialhub/eventcard/EventFragment.java
+            modified:   app/src/main/java/com/example/mobilesocialhub/eventcard/FolderCellAdapter.java
+            new file:   app/src/main/res/layout/activity_camara_main.xml
+            new file:   app/src/main/res/layout/albums.xml
+            new file:   app/src/main/res/layout/camera.xml
+            new file:   app/src/main/res/xml/file_paths.xml
+
+commit 35da66eb8ce578948e29c6cba4a1cfb3d1ce7c0a
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Tue Nov 3 21:43:32 2020 +1100
+
+            modified:   .gradle/6.5/executionHistory/executionHistory.lock
+            modified:   .gradle/6.5/fileHashes/fileHashes.lock
+            modified:   app/src/main/AndroidManifest.xml
+            deleted:    app/src/main/java/com/example/mobilesocialhub/MainActivity.java
+            deleted:    app/src/main/java/com/example/mobilesocialhub/TestFragment.java
+            modified:   app/src/main/java/com/example/mobilesocialhub/eventcard/EventFragment.java
+            modified:   app/src/main/java/com/example/mobilesocialhub/eventcard/FolderCellAdapter.java
+
+commit 36aeecb6edcf2a24bbc4906ad93f3beef7d79335
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Tue Nov 3 03:27:06 2020 +1100
+
+    add GPS
+
+commit dd35a92a6e8e3068563cff1fe4d64e868c5fc0a9
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Tue Nov 3 00:08:23 2020 +1100
+
+    Fix same events occur multiple time problem
+    
+    clear the eventlist everytime readin data
+
+commit a4af89b918d61284f3a4a2b9e35660266444a74f
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Mon Nov 2 23:41:05 2020 +1100
+
+    CreateEvent layout changed, Activity Picture update
+    
+    The createEvent layout is drafter;
+    It now can recognize different activity when pressing different picture;
+    The Event list will also change the activity picture accordingly;
+    Bugs need to be fix:
+    -- shopping icon too small
+    -- navigation bar is not reset
+    -- the text is not reset
+
+commit ccb0494759e05c233b5fd7000ae53b629b6c5edb
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Sat Oct 31 23:07:10 2020 +1100
+
+    Change event layout
+    
+    Edit the event layout and test the fragment intent
+
+commit 33cc3aa082c2648495b2bb0004a4c18db664d70c
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Sat Oct 31 07:12:16 2020 +1100
+
+            modified:   .gradle/6.5/executionHistory/executionHistory.bin
+            modified:   .gradle/6.5/executionHistory/executionHistory.lock
+            modified:   .gradle/6.5/fileHashes/fileHashes.bin
+            modified:   .gradle/6.5/fileHashes/fileHashes.lock
+            modified:   .gradle/6.5/javaCompile/classAnalysis.bin
+
+commit 1f2ff4931e28bfcd3082dd6685e7684d5af306b6
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Sat Oct 31 06:54:51 2020 +1100
+
+    create event page
+
+commit 8226e388dc2e598aecc1f2e34c8d107bcac26c5e
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Fri Oct 30 22:32:53 2020 +1100
+
+    intent tranmit id
+
+commit be97aeccefcc933355ee6d86092cd679254c9287
+Merge: 672bbb9 98b4cde
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Fri Oct 30 21:31:51 2020 +1100
+
+    Merge branch 'jimmy' into Mia
+
+commit 672bbb972d286fbdfda49e29a1f8790c8067a7a1
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Fri Oct 30 21:23:37 2020 +1100
+
+    Click Item
+    
+    Click the button and send information draft
+
+commit 98b4cdedcb67378976d322982e8b12286c9adc76
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Fri Oct 30 05:25:11 2020 +1100
+
+            modified:   .gradle/6.5/executionHistory/executionHistory.bin
+            modified:   .gradle/6.5/executionHistory/executionHistory.lock
+            modified:   .gradle/6.5/fileHashes/fileHashes.bin
+            modified:   .gradle/6.5/fileHashes/fileHashes.lock
+            modified:   .gradle/6.5/fileHashes/resourceHashesCache.bin
+            modified:   .gradle/6.5/javaCompile/classAnalysis.bin
+            modified:   .gradle/6.5/javaCompile/jarAnalysis.bin
+            modified:   .gradle/6.5/javaCompile/javaCompile.lock
+            modified:   .gradle/6.5/javaCompile/taskHistory.bin
+            modified:   .gradle/buildOutputCleanup/buildOutputCleanup.lock
+            modified:   .gradle/buildOutputCleanup/outputFiles.bin
+            modified:   .gradle/checksums/checksums.lock
+            modified:   .gradle/checksums/md5-checksums.bin
+            modified:   .gradle/checksums/sha1-checksums.bin
+            modified:   app/build.gradle
+            modified:   app/src/main/res/layout/msg_item.xml
+
+commit 96c3a5a59e4ce743fb741c10a86d2b9a99960ba1
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Fri Oct 30 05:15:50 2020 +1100
+
+            modified:   .gradle/6.5/executionHistory/executionHistory.bin
+            modified:   .gradle/6.5/executionHistory/executionHistory.lock
+            modified:   .gradle/6.5/fileHashes/fileHashes.bin
+
+commit 10aab1c72488305da6ba6ed5b850015c4032a37c
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Fri Oct 30 05:09:06 2020 +1100
+
+            modified:   .gradle/6.5/executionHistory/executionHistory.bin
+            modified:   .gradle/6.5/executionHistory/executionHistory.lock
+            modified:   .gradle/6.5/fileHashes/fileHashes.bin
+            modified:   .gradle/6.5/fileHashes/fileHashes.lock
+            modified:   .gradle/6.5/fileHashes/resourceHashesCache.bin
+            modified:   .gradle/6.5/javaCompile/classAnalysis.bin
+            modified:   .gradle/6.5/javaCompile/jarAnalysis.bin
+            modified:   .gradle/6.5/javaCompile/javaCompile.lock
+            modified:   .gradle/6.5/javaCompile/taskHistory.bin
+            modified:   .gradle/buildOutputCleanup/buildOutputCleanup.lock
+            modified:   .gradle/buildOutputCleanup/outputFiles.bin
+            modified:   .gradle/checksums/checksums.lock
+            modified:   .gradle/checksums/md5-checksums.bin
+            modified:   .gradle/checksums/sha1-checksums.bin
+            modified:   .idea/jarRepositories.xml
+            modified:   app/build.gradle
+            modified:   app/src/main/AndroidManifest.xml
+            new file:   app/src/main/java/com/example/mobilesocialhub/TestActivity.java
+            new file:   app/src/main/java/com/example/mobilesocialhub/chat/ChatActivity.java
+            new file:   app/src/main/java/com/example/mobilesocialhub/chat/ChatFragment.java
+            new file:   app/src/main/java/com/example/mobilesocialhub/chat/Msg.java
+            new file:   app/src/main/java/com/example/mobilesocialhub/chat/MsgAdapter.java
+            new file:   app/src/main/res/drawable/call.png
+            new file:   app/src/main/res/drawable/camera.png
+            new file:   app/src/main/res/drawable/ic_launcher_foreground.xml
+            new file:   app/src/main/res/drawable/message_left.9.png
+            new file:   app/src/main/res/drawable/message_right.9.png
+            new file:   app/src/main/res/drawable/picture.png
+            new file:   app/src/main/res/drawable/plan.png
+            new file:   app/src/main/res/drawable/profile_mia.jpg
+            new file:   app/src/main/res/drawable/profile_yangyang.jpg
+            new file:   app/src/main/res/drawable/rectangle_input.xml
+            new file:   app/src/main/res/drawable/rectangle_left.xml
+            new file:   app/src/main/res/drawable/rectangle_right.xml
+            new file:   app/src/main/res/layout/activity_chat.xml
+            new file:   app/src/main/res/layout/activity_test.xml
+            new file:   app/src/main/res/layout/fragment_chat_page.xml
+            new file:   app/src/main/res/layout/msg_item.xml
+            new file:   app/src/main/res/menu/bottom_menu.xml
+            modified:   build.gradle
+            modified:   gradle/wrapper/gradle-wrapper.properties
+
+commit cdfdf595cb0cae0e737d71743d52df3406b4b3a5
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Wed Oct 28 17:10:27 2020 +1100
+
+            new file:   .gradle/6.1.1/executionHistory/executionHistory.bin
+            modified:   .gradle/6.1.1/executionHistory/executionHistory.lock
+            new file:   .gradle/6.1.1/fileContent/fileContent.lock
+            modified:   .gradle/6.1.1/fileHashes/fileHashes.bin
+            modified:   .gradle/6.1.1/fileHashes/fileHashes.lock
+            new file:   .gradle/6.1.1/fileHashes/resourceHashesCache.bin
+            new file:   .gradle/6.1.1/javaCompile/classAnalysis.bin
+            new file:   .gradle/6.1.1/javaCompile/jarAnalysis.bin
+            new file:   .gradle/6.1.1/javaCompile/javaCompile.lock
+            new file:   .gradle/6.1.1/javaCompile/taskHistory.bin
+            modified:   .gradle/buildOutputCleanup/buildOutputCleanup.lock
+            modified:   .gradle/buildOutputCleanup/outputFiles.bin
+            modified:   .gradle/checksums/checksums.lock
+            modified:   .gradle/checksums/md5-checksums.bin
+            modified:   .gradle/checksums/sha1-checksums.bin
+
+commit f2f4cf5a635c5666251a8b3823f9d5bc4d2f8ed5
+Author: JimmyLsc <45891479+JimmyLsc@users.noreply.github.com>
+Date:   Wed Oct 28 17:07:10 2020 +1100
+
+            new file:   .gradle/6.1.1/executionHistory/executionHistory.lock
+            modified:   .gradle/6.1.1/fileHashes/fileHashes.bin
+            modified:   .gradle/6.1.1/fileHashes/fileHashes.lock
+            modified:   .gradle/buildOutputCleanup/buildOutputCleanup.lock
+            modified:   .gradle/buildOutputCleanup/outputFiles.bin
+            modified:   .gradle/checksums/checksums.lock
+            modified:   .gradle/checksums/md5-checksums.bin
+            modified:   .gradle/checksums/sha1-checksums.bin
+            new file:   .idea/.name
+            modified:   .idea/codeStyles/Project.xml
+            modified:   .idea/gradle.xml
+            modified:   .idea/vcs.xml
+            modified:   build.gradle
+
+commit b96a5492f5918d2ae0f1e240a53b8b9dc8923d7c
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Wed Oct 28 17:04:01 2020 +1100
+
+    Firebase + Event Fragment
+    
+    The firebase is connected and can read in data
+    The eveny activity is transform to fragment
+
+commit 90788bda239eb0976111c8cfe036725d3fbf5af1
+Author: Mialovewatermelon <46467032+Mialovewatermelon@users.noreply.github.com>
+Date:   Mon Oct 26 13:43:04 2020 +1100
+
+    Trying Firebase
+    
+    Connection Failed
+
+commit ad7148bd57eb8446fd8703365e9b00abfc4ee3ee
+Author: Mialovewatermelon <46467032+Mialovewatermelon@users.noreply.github.com>
+Date:   Mon Oct 26 11:13:55 2020 +1100
+
+    Update README.md
+
+commit 073db7ccad51f00c2cb2e1e41420eb4b8376a927
+Author: Mialovewatermelon <46467032+Mialovewatermelon@users.noreply.github.com>
+Date:   Mon Oct 26 11:12:13 2020 +1100
+
+    Change the location of the icon
+
+commit 3051881958405970489690f5ab213d560a5e71f1
+Author: Mialovewatermelon <46467032+Mialovewatermelon@users.noreply.github.com>
+Date:   Mon Oct 26 11:09:23 2020 +1100
+
+    exec file
+
+commit c9f143e25511e3b63a85ddbd1f5534cefb72eba5
+Author: Mialovewatermelon <46467032+Mialovewatermelon@users.noreply.github.com>
+Date:   Wed Oct 21 12:44:41 2020 +1100
+
+    First draft of activity card
+    
+    Using recyclerview and databinding create activity card, with data added in the list
+
+commit 3169503f092903ef0e41773a262dc2d4704f8d0c
+Author: Mialovewatermelon <46467032+Mialovewatermelon@users.noreply.github.com>
+Date:   Sat Oct 17 20:41:41 2020 +1100
+
+    Create README.md
+
+commit 6dae084e5bb52e5747eab7729a011a805938f145
+Author: Mialovewatermelon <ningjing0412@gmail.com>
+Date:   Sat Oct 17 20:32:02 2020 +1100
+
+    Initial commit
