@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "828880313134",
+    "firebase_url": "https://mobile-social-hub.firebaseio.com",
+    "project_id": "mobile-social-hub",
+    "storage_bucket": "mobile-social-hub.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828880313134:android:cb7287f3604c6c9c4c78bf",
+        "android_client_info": {
+          "package_name": "com.example.mobilesocialhub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828880313134-5gul223j47ejf551a8eui0f4bk37hrla.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq611o2ZUgu1KnAc3-pIolPK25CLQhasM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "828880313134-5gul223j47ejf551a8eui0f4bk37hrla.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

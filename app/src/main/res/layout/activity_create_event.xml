@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="38dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="85dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="243dp"
+            android:layout_height="35dp"
+            android:text="Create Event"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="389dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Activity Name"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="10dp"
+                    android:src="@drawable/dateicon" />
+
+                <TextView
+                    android:id="@+id/date_text"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:id="@+id/date_pick_btn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="#00FF0000"
+                    android:src="@drawable/add" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Activity Name"
+                    android:src="@drawable/timeicon"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="10dp"/>
+                <TextView
+                    android:id="@+id/time_text"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="18sp" />
+                <ImageButton
+                    android:id="@+id/time_pick_btn"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_width="30dp"
+                    android:background="#00FF0000"
+                    android:src="@drawable/add"
+                    android:layout_height="30dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Activity Name"
+                    android:src="@drawable/locationicon"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="10dp"/>
+                <EditText
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:hint="Place"
+                    android:id="@+id/placeTextView"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline5">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/sport"
+                android:layout_width="76dp"
+                android:layout_height="74dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/sport"
+                app:civ_border_color="@color/mdtp_transparent_black"
+                app:civ_border_width="1dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/dining"
+                android:layout_width="76dp"
+                android:layout_height="74dp"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/restaurant"
+                app:civ_border_color="@color/mdtp_transparent_black"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sport"
+                app:layout_constraintStart_toEndOf="@+id/sport"
+                app:layout_constraintTop_toTopOf="@+id/sport"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/shopping"
+                android:layout_width="76dp"
+                android:layout_height="74dp"
+                android:src="@drawable/shopping"
+                app:civ_border_color="@color/mdtp_transparent_black"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/dining"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.336"
+                app:layout_constraintStart_toEndOf="@+id/dining"
+                app:layout_constraintTop_toTopOf="@+id/dining"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/work"
+                android:layout_width="76dp"
+                android:layout_height="74dp"
+                android:src="@drawable/work"
+                app:civ_border_color="@color/mdtp_transparent_black"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/dining"
+                app:layout_constraintTop_toBottomOf="@+id/dining" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/dating"
+                android:layout_width="76dp"
+                android:layout_height="74dp"
+                android:src="@drawable/dating"
+                app:civ_border_color="@color/mdtp_transparent_black"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/work"
+                app:layout_constraintStart_toStartOf="@+id/sport"
+                app:layout_constraintTop_toTopOf="@+id/work" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/coffee"
+                android:layout_width="76dp"
+                android:layout_height="74dp"
+                android:src="@drawable/coffee"
+                app:civ_border_color="@color/mdtp_transparent_black"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/dating"
+                app:layout_constraintEnd_toEndOf="@+id/shopping"
+                app:layout_constraintStart_toStartOf="@+id/shopping"
+                app:layout_constraintTop_toTopOf="@+id/dating" />
+
+            <TextView
+                android:id="@+id/activityChosen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose your Activity"
+
+                app:layout_constraintBottom_toTopOf="@+id/dining"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/create_event_btn"
+            android:layout_width="40dp"
+            android:layout_height="41dp"
+            android:background="#00FF0000"
+            app:civ_border_color="@color/mdtp_transparent_black"
+            app:civ_border_width="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.78"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            app:layout_constraintVertical_bias="1.0"
+            android:src="@drawable/addevent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
